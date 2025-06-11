@@ -37,39 +37,6 @@ html, body {
   object-fit: cover;
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-}
-
-.logo {
-  display: block;
-  width: 20vw;
-  max-width: 300px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: blue;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
 /* Центрирующий контейнер */
 .about-wrapper {
   position: fixed;
@@ -88,6 +55,41 @@ nav a {
 .about-wrapper.visible {
   display: flex;
 }
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.logo {
+  display: block;
+  width: 20vw;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
 
 /* Сам текст */
 .about-text {
