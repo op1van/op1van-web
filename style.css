@@ -8,7 +8,8 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background: black;
 }
 
 .video-container {
@@ -33,6 +34,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
+  height: 100%;
 }
 
 .logo {
@@ -44,18 +46,18 @@ html, body {
 }
 
 nav {
-  margin-top: 1rem;
+  margin-top: calc(1rem + 50px); /* базовый отступ + опускание на 50px */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem; /* увеличено в 1.5 раза */
 }
 
 nav a {
   text-decoration: none;
   color: blue;
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.375rem; /* 16px + 4pt ≈ 22px */
 }
 
 /* Мобильная версия */
@@ -66,7 +68,6 @@ nav a {
   }
 
   .content {
-    height: 100%;
     justify-content: flex-start;
   }
 
@@ -79,6 +80,6 @@ nav a {
   }
 
   nav a {
-    font-size: 1.2rem;
+    font-size: 1.625rem; /* чуть крупнее для мобильных: 18px + 4pt ≈ 26px */
   }
 }
