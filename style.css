@@ -138,5 +138,5 @@ nav a {
 
 /* Размытие ссылки ABOUT, когда открыт текст */
 .about-wrapper.visible ~ .content nav a#about-toggle {
-  filter: blur(4px);
+  filter: blur(10px);
 }
