@@ -135,11 +135,16 @@ nav a {
   }
 }
 
+
+/* Единый ховер-блюр */
+nav a:hover,
+.logo-link:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
+
+/* Активный блюр у ABOUT */
 nav a#about-toggle.blurred {
   filter: blur(2px);
 }
 
-nav a:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
-}
