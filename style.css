@@ -70,8 +70,8 @@ nav a {
 
 /* ABOUT текст */
 .about-text {
-  max-width: 830px; /* ширина уменьшена на 30px */
-  margin: -10px auto 5rem auto; /* блок смещён вверх на 10px */
+  max-width: 830px;
+  margin: -10px auto 5rem auto;
   padding: 0 1rem;
   color: blue;
   font-weight: 900;
@@ -87,7 +87,23 @@ nav a {
   display: block;
 }
 
+/* Блок ABOUT + кнопка BACK */
+.about-block {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.about-block .back-button {
+  display: none;
+  margin: 2rem 0 1rem 0;
+  font-weight: bold;
+  color: blue;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
 
 /* Футер */
 .footer {
@@ -121,8 +137,24 @@ nav a {
   }
 
   .about-text {
-    font-size: 1rem;
-    line-height: 1.2;
+    font-size: 1.25rem;
+    line-height: normal;
     margin-bottom: 4rem;
+  }
+
+  .hide-nav {
+    display: none;
+  }
+
+  .show-about {
+    display: flex;
+  }
+
+  .show-about .about-text {
+    display: block;
+  }
+
+  .show-about .back-button {
+    display: inline-block;
   }
 }
