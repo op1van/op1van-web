@@ -14,43 +14,42 @@
     </video>
   </div>
 
-  <div class="content">
-    <img src="logo.svg" alt="op1van logo" class="logo" />
-    <nav>
-      <a href="#">BANDCAMP</a>
-      <a href="#">INSTAGRAM</a>
-      <a href="#">TIK TOK</a>
-      <a href="#">VIDEO</a>
-      <a href="#">CONTACT</a>
-      <a href="#" id="about-link">ABOUT</a>
-    </nav>
-  </div>
-
-  <!-- Центрированный текст ABOUT -->
-  <div id="about-wrapper" class="about-wrapper">
-    <div class="about-text" id="about-text">
+  <div class="about-wrapper" id="about-wrapper">
+    <div class="about-text">
       <p>
         THE OP-1 – MACHINE ITSELF – HAS AN INTERESTING FEATURE – SAMPLING RADIO STATIONS. I TRAVEL A LOT.
         AND IN DIFFERENT CITIES, RADIO WAVES CARRY THE LOCAL FLAVOUR. THAT’S WHY MY MUSIC STARTS WITH RECORDED BITS OF SONGS
-        FROM VARIOUS CITIES AND COUNTRIES, WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.<br><br>
+        FROM VARIOUS CITIES AND COUNTRIES, WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.
         THE TRACKS TITLES WILL HINT AT THEIR ORIGINS. SOME PARTS WERE LATER REWORKED IN THE STUDIO, AND PARTIALLY VOCALS WERE ADDED.
         IT IS A UNIQUE EXPERIENCE OF RECORDING A MOMENT, AN OCCURRENCE THAT CANNOT BE PREDICTED.
-        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.<br><br>
+        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.
         BECAUSE YOU HAD TO PRESS THE "RECORD" BUTTON IN ADVANCE: EVEN BEFORE THE DESIRED PIECE OF MUSIC STARTED PLAYING.
         THAT’S THE CONCEPT. AND THEN IT’S A MATTER OF TASTE.
       </p>
     </div>
   </div>
 
+  <div class="content">
+    <img src="logo.svg" alt="op1van logo" class="logo" />
+    <nav>
+      <a href="https://op1van.bandcamp.com/" target="_blank">BANDCAMP</a>
+      <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
+      <a href="https://www.tiktok.com/@op1van?_t=ZN-8x7uKjThnxS&_r=1" target="_blank">TIK TOK</a>
+      <a href="#">VIDEO</a>
+      <a href="#">CONTACT</a>
+      <a href="#" id="about-toggle">ABOUT</a>
+    </nav>
+  </div>
+
   <footer class="footer">
-    All rights reserved © 2025
+    ALL RIGHTS RESERVED © 2025
   </footer>
 
   <script>
-    const aboutLink = document.getElementById("about-link");
+    const aboutToggle = document.getElementById("about-toggle");
     const aboutWrapper = document.getElementById("about-wrapper");
 
-    aboutLink.addEventListener("click", function (e) {
+    aboutToggle.addEventListener("click", function (e) {
       e.preventDefault();
       aboutWrapper.classList.toggle("visible");
     });
