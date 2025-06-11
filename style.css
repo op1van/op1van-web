@@ -70,28 +70,27 @@ nav a {
   font-size: 1rem;
 }
 
-/* Центрированный текст */
+/* Открывающийся текст */
 .about-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
   display: none;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding: 2rem;
+  text-align: center;
+  z-index: 2;
   pointer-events: none;
 }
 
-.about-wrapper.visible {
+body.about-open .about-wrapper {
   display: flex;
   pointer-events: auto;
 }
 
-/* Содержание текста */
 .about-text {
   max-width: 830px;
   color: blue;
@@ -99,6 +98,11 @@ nav a {
   font-size: 1.25rem;
   line-height: normal;
   text-transform: uppercase;
+}
+
+/* Blur для ABOUT */
+body.about-open nav a#about-toggle {
+  filter: blur(4px);
 }
 
 /* Футер */
@@ -113,11 +117,6 @@ nav a {
   text-transform: uppercase;
   color: blue;
   z-index: 2;
-}
-
-/* Blur эффект на ссылку ABOUT, когда текст открыт */
-.about-wrapper.visible ~ .content nav a#about-toggle {
-  filter: blur(4px);
 }
 
 /* Мобильная версия */
