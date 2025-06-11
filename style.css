@@ -70,14 +70,14 @@ nav a {
 
 /* ABOUT текст */
 .about-text {
-  max-width: 780px; /* увеличено на 80px */
+  max-width: 780px;
   margin: 0 auto 5rem auto;
   padding: 0 1rem;
   color: blue;
-  font-weight: bold;
+  font-weight: 900; /* максимально жирный */
   text-align: center;
-  font-size: 1.166rem; /* увеличено ещё на 1pt */
-  line-height: 1.1;
+  font-size: 1.166rem;
+  line-height: normal; /* авто-значение по умолчанию */
   display: none;
   z-index: 1;
   position: relative;
