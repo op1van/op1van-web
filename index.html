@@ -45,14 +45,16 @@
     ALL RIGHTS RESERVED © 2025
   </footer>
 
-  <script>
-    const aboutToggle = document.getElementById("about-toggle");
-    const aboutWrapper = document.getElementById("about-wrapper");
+<script>
+  const aboutToggle = document.getElementById("about-toggle");
+  const aboutWrapper = document.getElementById("about-wrapper");
 
-    aboutToggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      aboutWrapper.classList.toggle("visible");
-    });
-  </script>
+  aboutToggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    aboutWrapper.classList.toggle("visible");
+    aboutToggle.classList.toggle("blurred");
+  });
+</script>
+
 </body>
 </html>
