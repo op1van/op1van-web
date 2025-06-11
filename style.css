@@ -32,7 +32,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5px; /* верхний отступ до логотипа */
+  padding-top: 10px; /* верхний отступ до логотипа */
   height: 100%;
 }
 
@@ -41,7 +41,7 @@ html, body {
   width: 20vw;
   max-width: 300px;
   height: auto;
-  margin-bottom: 5px; /* отступ от логотипа до меню */
+  margin-bottom: 10px; /* отступ от логотипа до меню */
 }
 
 nav {
@@ -61,7 +61,7 @@ nav a {
 /* Футер */
 .footer {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   width: 100%;
   text-align: center;
   font-size: 12px;
