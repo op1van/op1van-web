@@ -94,3 +94,27 @@ nav a {
     font-size: 1rem;
   }
 }
+
+.about-text {
+  max-width: 700px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+  color: blue;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  display: none;
+  z-index: 1;
+  position: relative;
+}
+
+.about-text.visible {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+  }
+}
