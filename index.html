@@ -49,12 +49,26 @@
   const aboutToggle = document.getElementById("about-toggle");
   const aboutWrapper = document.getElementById("about-wrapper");
 
+  // Открытие
   aboutToggle.addEventListener("click", function (e) {
     e.preventDefault();
-    aboutWrapper.classList.toggle("visible");
-    aboutToggle.classList.toggle("blurred");
+    aboutWrapper.classList.add("visible");
+    aboutToggle.classList.add("blurred");
+  });
+
+  // Закрытие при клике вне about-text
+  document.addEventListener("click", function (e) {
+    const isAboutOpen = aboutWrapper.classList.contains("visible");
+    const clickedInsideText = e.target.closest('.about-text');
+    const clickedToggle = e.target === aboutToggle;
+
+    if (isAboutOpen && !clickedInsideText && !clickedToggle) {
+      aboutWrapper.classList.remove("visible");
+      aboutToggle.classList.remove("blurred");
+    }
   });
 </script>
+
 
 </body>
 </html>
