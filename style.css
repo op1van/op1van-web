@@ -70,19 +70,27 @@ nav a {
   font-size: 1rem;
 }
 
+/* Центрированный блок текста */
 .about-wrapper {
   display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 830px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 2rem;
-  z-index: 2;
+}
+
+.about-wrapper.visible {
+  display: flex;
 }
 
 .about-text {
+  max-width: 830px;
   color: blue;
   font-weight: 900;
   font-size: 1.25rem;
