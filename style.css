@@ -17,6 +17,7 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   font-family: 'CustomFont', sans-serif;
+  background: black;
 }
 
 .video-container {
@@ -68,24 +69,29 @@ nav a {
   font-size: 1rem;
 }
 
+/* Открывающийся текст */
 .about-text {
   max-width: 830px;
-  margin: -10px auto 5rem auto;
   padding: 0 1rem;
   color: blue;
   font-weight: 900;
   text-align: center;
   font-size: 1.25rem;
   line-height: normal;
+  text-transform: uppercase;
   display: none;
   z-index: 1;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .about-text.visible {
   display: block;
 }
 
+/* Футер */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -117,8 +123,8 @@ nav a {
   }
 
   .about-text {
-    font-size: 1.25rem;
-    line-height: normal;
-    margin-bottom: 4rem;
+    top: 55%;
+    font-size: 1.1rem;
+    padding: 0 2rem;
   }
 }
