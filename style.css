@@ -37,25 +37,6 @@ html, body {
   object-fit: cover;
 }
 
-/* Центрирующий контейнер */
-.about-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.about-wrapper.visible {
-  display: flex;
-}
-
 .content {
   position: relative;
   z-index: 1;
@@ -63,7 +44,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .logo {
@@ -89,9 +70,28 @@ nav a {
   font-size: 1rem;
 }
 
+/* Центрированный текст */
+.about-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  pointer-events: none;
+}
 
+.about-wrapper.visible {
+  display: flex;
+  pointer-events: auto;
+}
 
-/* Сам текст */
+/* Содержание текста */
 .about-text {
   max-width: 830px;
   color: blue;
@@ -115,6 +115,11 @@ nav a {
   z-index: 2;
 }
 
+/* Blur эффект на ссылку ABOUT, когда текст открыт */
+.about-wrapper.visible ~ .content nav a#about-toggle {
+  filter: blur(4px);
+}
+
 /* Мобильная версия */
 @media (max-width: 768px) {
   .logo {
@@ -136,9 +141,4 @@ nav a {
     font-size: 1.1rem;
     padding: 1rem 1.5rem;
   }
-}
-
-/* Размытие ссылки ABOUT, когда открыт текст */
-.about-wrapper.visible ~ .content nav a#about-toggle {
-  filter: blur(10px);
 }
