@@ -45,18 +45,29 @@ html, body {
 }
 
 nav {
-  margin-top: calc(1rem + 30px); /* увеличенный отступ от логотипа */
+  margin-top: calc(1rem + 30px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem; /* увеличено в 1.5 раза */
+  gap: 1.5rem;
 }
 
 nav a {
   text-decoration: none;
   color: blue;
   font-weight: bold;
-  font-size: 1.166rem; /* примерно 14pt ≈ 18.66px */
+  font-size: 1.166rem;
+}
+
+/* Футер */
+.footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: blue;
+  z-index: 1;
 }
 
 /* Мобильная версия */
@@ -80,5 +91,9 @@ nav a {
 
   nav a {
     font-size: 1.2rem;
+  }
+
+  .footer {
+    font-size: 12px;
   }
 }
