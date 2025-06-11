@@ -9,6 +9,8 @@ html, body {
   height: 100%;
   overflow: hidden;
   font-family: sans-serif;
+  background: black;
+  color: blue;
 }
 
 .video-container {
@@ -25,27 +27,25 @@ html, body {
   object-fit: cover;
 }
 
-.content {
+/* ---------- HEADER ---------- */
+
+.header {
   position: relative;
   z-index: 1;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
-  height: 100%;
+  padding-top: 40px;
 }
 
 .logo {
-  display: block;
   width: 20vw;
   max-width: 300px;
   height: auto;
-  margin: 0 auto;
 }
 
 nav {
-  margin-top: calc(1rem + 30px);
+  margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -56,37 +56,37 @@ nav a {
   text-decoration: none;
   color: blue;
   font-weight: bold;
-  font-size: 1.166rem;
+  font-size: 1.1rem;
 }
 
-/* Футер */
+/* ---------- FOOTER ---------- */
+
 .footer {
   position: absolute;
   bottom: 20px;
   width: 100%;
   text-align: center;
   font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
   color: blue;
   z-index: 1;
 }
 
-/* Мобильная версия */
+/* ---------- MOBILE ---------- */
+
 @media (max-width: 768px) {
   .logo {
     width: 50vw;
     max-width: none;
   }
 
-  .content {
-    justify-content: flex-start;
-  }
-
   nav {
     flex-direction: column;
     align-items: center;
-    margin-top: auto;
-    margin-bottom: 3rem;
     gap: 24px;
+    margin-top: 20px;
   }
 
   nav a {
@@ -95,5 +95,6 @@ nav a {
 
   .footer {
     font-size: 12px;
+    letter-spacing: 0.5px;
   }
 }
