@@ -42,27 +42,17 @@ html, body {
 }
 
 nav {
-  margin-top: 50px;
+  margin-top: 50px; /* смещение меню вниз */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
 
-nav a,
-nav .inactive {
+nav a {
   text-decoration: none;
   color: blue;
   font-weight: bold;
-  font-size: 1rem;
-}
-
-/* Неактивные ссылки */
-nav .inactive {
-  opacity: 0.5;
-  text-decoration: line-through;
-  pointer-events: none;
-  cursor: default;
 }
 
 /* Мобильная версия */
@@ -77,8 +67,7 @@ nav .inactive {
     margin-top: 40px;
   }
 
-  nav a,
-  nav .inactive {
+  nav a {
     font-size: 1.2rem;
   }
 }
