@@ -58,18 +58,18 @@
     aboutToggle.classList.add("blurred");
   });
 
-  // Закрытие при клике вне about-text
+  // Закрытие при клике в любом месте (включая about)
   document.addEventListener("click", function (e) {
     const isAboutOpen = aboutWrapper.classList.contains("visible");
     const clickedInsideText = e.target.closest('.about-text');
-    const clickedToggle = e.target === aboutToggle;
 
-    if (isAboutOpen && !clickedInsideText && !clickedToggle) {
+    if (isAboutOpen && !clickedInsideText) {
       aboutWrapper.classList.remove("visible");
       aboutToggle.classList.remove("blurred");
     }
   });
 </script>
+
 
 
 </body>
