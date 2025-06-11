@@ -70,13 +70,13 @@ nav a {
 
 /* ABOUT текст */
 .about-text {
-  max-width: 700px;
+  max-width: 780px; /* увеличено на 80px */
   margin: 0 auto 5rem auto;
   padding: 0 1rem;
   color: blue;
   font-weight: bold;
   text-align: center;
-  font-size: 1.083rem;
+  font-size: 1.166rem; /* увеличено ещё на 1pt */
   line-height: 1.1;
   display: none;
   z-index: 1;
@@ -86,6 +86,7 @@ nav a {
 .about-text.visible {
   display: block;
 }
+
 
 /* Футер */
 .footer {
