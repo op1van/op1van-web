@@ -26,13 +26,16 @@
     </nav>
   </div>
 
-  <!-- Текст блока ABOUT -->
   <div id="about-text" class="about-text">
     <p>
       The OP-1 – machine itself – has an interesting feature – sampling radio stations. I travel a lot.
-      And in different cities, radio waves carry the local flavour. That’s why my music starts with recorded bits of songs from various cities and countries, which I later reassemble like a puzzle on the OP-1. The tracks titles will hint at their origins.
-      Some parts were later reworked in the studio, and partially vocals were added. It is a unique experience of recording a moment, an occurrence that cannot be predicted. It's radio, after all – you can't rewind it.
-      Literally, it’s like a hunt for the right piece of music. Because you had to press the "record" button in advance: even before the desired piece of music started playing. That’s the concept. And then it’s a matter of taste.
+      And in different cities, radio waves carry the local flavour. That’s why my music starts with recorded bits of songs from various cities and countries,
+      which I later reassemble like a puzzle on the OP-1. The tracks titles will hint at their origins.
+      Some parts were later reworked in the studio, and partially vocals were added.
+      It is a unique experience of recording a moment, an occurrence that cannot be predicted.
+      It's radio, after all – you can't rewind it. Literally, it’s like a hunt for the right piece of music.
+      Because you had to press the "record" button in advance: even before the desired piece of music started playing.
+      That’s the concept. And then it’s a matter of taste.
     </p>
   </div>
 
@@ -41,10 +44,15 @@
   </footer>
 
   <script>
-    // Показ / скрытие текста по клику
-    document.getElementById('about-link').addEventListener('click', function (e) {
-      e.preventDefault();
-      document.getElementById('about-text').classList.toggle('visible');
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutLink = document.getElementById("about-link");
+      const aboutText = document.getElementById("about-text");
+
+      aboutLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        aboutText.style.display = "block";
+        aboutText.scrollIntoView({ behavior: "smooth" });
+      });
     });
   </script>
 </body>
