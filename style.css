@@ -29,13 +29,19 @@ body, html {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: blue;
   padding-top: 3rem;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: bold;
+.logo {
+  width: 20vw;
+  max-width: 300px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 50vw;
+  }
 }
 
 nav {
