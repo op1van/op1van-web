@@ -60,6 +60,7 @@ nav a {
   font-size: 1rem;
 }
 
+/* ABOUT текст */
 .about-text {
   max-width: 700px;
   margin: 0 auto 5rem auto;
@@ -67,13 +68,18 @@ nav a {
   color: blue;
   font-weight: bold;
   text-align: center;
-  line-height: 1.6;
+  font-size: 1.083rem; /* увеличено на 1pt */
+  line-height: 1.1;     /* уменьшено межстрочное на ~30% */
   display: none;
   z-index: 1;
   position: relative;
-  font-size: 1rem;
 }
 
+.about-text.visible {
+  display: block;
+}
+
+/* Футер */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -87,8 +93,7 @@ nav a {
   z-index: 2;
 }
 
-
-/* Mobile */
+/* Мобильная версия */
 @media (max-width: 768px) {
   .logo {
     width: 50vw;
@@ -106,7 +111,8 @@ nav a {
   }
 
   .about-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.2;
     margin-bottom: 4rem;
   }
 }
