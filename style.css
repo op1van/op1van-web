@@ -148,3 +148,7 @@ nav a#about-toggle.blurred {
   filter: blur(2px);
 }
 
+.about-text:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
