@@ -39,7 +39,7 @@ html, body {
 
 .content {
   position: relative;
-  z-index: 1;
+  z-index: 10; /* Главное: поднимаем над about-wrapper */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@ nav a {
   font-size: 1rem;
 }
 
-/* Центрированный блок текста */
+/* Центрированный блок текста ABOUT */
 .about-wrapper {
   display: none;
   position: fixed;
@@ -109,7 +109,7 @@ nav a {
   font-weight: bold;
   text-transform: uppercase;
   color: blue;
-  z-index: 2;
+  z-index: 10;
 }
 
 /* Мобильная версия */
