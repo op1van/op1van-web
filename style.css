@@ -75,16 +75,18 @@ nav a {
 }
 
 .footer {
-  position: relative;
-  bottom: 20px;
+  position: fixed;
+  bottom: 15px;
+  left: 0;
   width: 100%;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   color: blue;
-  z-index: 1;
+  z-index: 2;
 }
+
 
 /* Mobile */
 @media (max-width: 768px) {
