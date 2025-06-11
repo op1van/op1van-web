@@ -7,16 +7,18 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: sans-serif;
 }
 
 .video-container {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  top: 0;
+  left: 0;
 }
 
 .video-container video {
@@ -32,8 +34,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px; /* верхний отступ до логотипа */
-  height: 100%;
+  padding-top: 10px;
 }
 
 .logo {
@@ -41,7 +42,7 @@ html, body {
   width: 20vw;
   max-width: 300px;
   height: auto;
-  margin-bottom: 10px; /* отступ от логотипа до меню */
+  margin-bottom: 10px;
 }
 
 nav {
@@ -49,6 +50,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 nav a {
@@ -58,10 +60,23 @@ nav a {
   font-size: 1rem;
 }
 
-/* Футер */
+.about-text {
+  max-width: 700px;
+  margin: 0 auto 5rem auto;
+  padding: 0 1rem;
+  color: blue;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  display: none;
+  z-index: 1;
+  position: relative;
+  font-size: 1rem;
+}
+
 .footer {
-  position: absolute;
-  bottom: 15px;
+  position: relative;
+  bottom: 20px;
   width: 100%;
   text-align: center;
   font-size: 12px;
@@ -71,50 +86,25 @@ nav a {
   z-index: 1;
 }
 
-/* Мобильная версия */
+/* Mobile */
 @media (max-width: 768px) {
   .logo {
     width: 50vw;
     max-width: none;
   }
 
-  .content {
-    justify-content: flex-start;
-  }
-
   nav {
     flex-direction: column;
     align-items: center;
-    margin-top: auto;
-    margin-bottom: 3rem;
     gap: 24px;
   }
 
   nav a {
     font-size: 1rem;
   }
-}
 
-.about-text {
-  max-width: 700px;
-  margin: 2rem auto 4rem auto;
-  padding: 0 1rem;
-  color: blue;
-  font-weight: bold;
-  text-align: center;
-  line-height: 1.5;
-  display: none;
-  z-index: 1;
-  position: relative;
-}
-
-.about-text.visible {
-  display: block;
-}
-
-@media (max-width: 768px) {
   .about-text {
     font-size: 0.95rem;
-    margin-top: 1.5rem;
+    margin-bottom: 4rem;
   }
 }
