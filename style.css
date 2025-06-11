@@ -32,7 +32,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
+  padding-top: 20px; /* отступ от верха до логотипа */
   height: 100%;
 }
 
@@ -41,11 +41,10 @@ html, body {
   width: 20vw;
   max-width: 300px;
   height: auto;
-  margin: 0 auto;
+  margin-bottom: 20px; /* отступ от логотипа до меню */
 }
 
 nav {
-  margin-top: calc(1rem + 30px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
