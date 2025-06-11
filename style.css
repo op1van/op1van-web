@@ -117,7 +117,7 @@ nav a {
 
 /* Blur эффект на ссылку ABOUT, когда текст открыт */
 .about-wrapper.visible ~ .content nav a#about-toggle {
-  filter: blur(1px);
+  filter: blur(4px);
 }
 
 /* Мобильная версия */
