@@ -45,18 +45,18 @@ html, body {
 }
 
 nav {
-  margin-top: calc(1rem + 30px); /* увеличено на 30px */
+  margin-top: calc(1rem + 30px); /* увеличенный отступ от логотипа */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem; /* увеличено в 1.5 раза */
 }
 
 nav a {
   text-decoration: none;
   color: blue;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.166rem; /* примерно 14pt ≈ 18.66px */
 }
 
 /* Мобильная версия */
