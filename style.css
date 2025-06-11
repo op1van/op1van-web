@@ -152,3 +152,8 @@ nav a#about-toggle.blurred {
   filter: blur(2px);
   transition: filter 0.2s ease;
 }
+
+.footer:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
