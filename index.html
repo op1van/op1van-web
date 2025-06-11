@@ -51,22 +51,24 @@
   const aboutToggle = document.getElementById("about-toggle");
   const aboutWrapper = document.getElementById("about-wrapper");
 
-  // Открытие (или повторное открытие) с остановкой всплытия
-  aboutToggle.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation(); // <-- ключевая строка
-    aboutWrapper.classList.add("visible");
-    aboutToggle.classList.add("blurred");
-  });
+  document.addEventListener("click", function (e) {
+    const clickedInsideText = e.target.closest(".about-text");
+    const clickedAbout = e.target === aboutToggle;
 
-  // Закрытие при клике в любом месте, включая ABOUT
-  document.addEventListener("click", function () {
-    if (aboutWrapper.classList.contains("visible")) {
+    const isOpen = aboutWrapper.classList.contains("visible");
+
+    if (!isOpen && clickedAbout) {
+      // Открыть
+      aboutWrapper.classList.add("visible");
+      aboutToggle.classList.add("blurred");
+    } else if (isOpen && (!clickedInsideText || clickedAbout)) {
+      // Закрыть
       aboutWrapper.classList.remove("visible");
       aboutToggle.classList.remove("blurred");
     }
   });
 </script>
+
 
 
 
