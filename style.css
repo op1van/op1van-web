@@ -33,9 +33,11 @@ body, html {
 }
 
 .logo {
+  display: block;
   width: 20vw;
   max-width: 300px;
   height: auto;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
