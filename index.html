@@ -10,10 +10,22 @@
   <div class="video-container">
     <video autoplay muted loop playsinline>
       <source src="video.mp4" type="video/mp4" />
-      Ваш браузер не поддерживает видео.
     </video>
   </div>
 
+  <div class="content">
+    <img src="logo.svg" alt="op1van logo" class="logo" />
+    <nav>
+      <a href="https://op1van.bandcamp.com/" target="_blank">BANDCAMP</a>
+      <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
+      <a href="https://www.tiktok.com/@op1van?_t=ZN-8x7uKjThnxS&_r=1" target="_blank">TIK TOK</a>
+      <a href="#">VIDEO</a>
+      <a href="#">CONTACT</a>
+      <a href="#" id="about-toggle">ABOUT</a>
+    </nav>
+  </div>
+
+  <!-- Центрированный текст -->
   <div class="about-wrapper" id="about-wrapper">
     <div class="about-text">
       <p>
@@ -29,29 +41,17 @@
     </div>
   </div>
 
-  <div class="content">
-    <img src="logo.svg" alt="op1van logo" class="logo" />
-    <nav>
-      <a href="https://op1van.bandcamp.com/" target="_blank">BANDCAMP</a>
-      <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
-      <a href="https://www.tiktok.com/@op1van?_t=ZN-8x7uKjThnxS&_r=1" target="_blank">TIK TOK</a>
-      <a href="#">VIDEO</a>
-      <a href="#">CONTACT</a>
-      <a href="#" id="about-toggle">ABOUT</a>
-    </nav>
-  </div>
-
   <footer class="footer">
     ALL RIGHTS RESERVED © 2025
   </footer>
 
   <script>
-    const aboutToggle = document.getElementById("about-toggle");
-    const aboutWrapper = document.getElementById("about-wrapper");
+    const toggle = document.getElementById("about-toggle");
+    const body = document.body;
 
-    aboutToggle.addEventListener("click", function (e) {
+    toggle.addEventListener("click", function (e) {
       e.preventDefault();
-      aboutWrapper.classList.toggle("visible");
+      body.classList.toggle("about-open");
     });
   </script>
 </body>
