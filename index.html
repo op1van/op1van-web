@@ -16,14 +16,15 @@
 
   <div class="content">
     <a href="index.html" class="logo-link">
-  <img src="logo.svg" alt="op1van logo" class="logo" />
-</a>
+      <img src="logo.svg" alt="op1van logo" class="logo" />
+    </a>
     <nav>
       <a href="https://op1van.bandcamp.com/" target="_blank">BANDCAMP</a>
       <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
       <a href="https://www.tiktok.com/@op1van?_t=ZN-8x7uKjThnxS&_r=1" target="_blank">TIK TOK</a>
       <a href="#">VIDEO</a>
       <a href="#">CONTACT</a>
+      <a href="#" id="player-toggle">PLAYER</a>
       <a href="#" id="about-toggle">ABOUT</a>
     </nav>
   </div>
@@ -33,45 +34,65 @@
       <p>
         THE OP-1 – MACHINE ITSELF – HAS AN INTERESTING FEATURE – SAMPLING RADIO STATIONS. I TRAVEL A LOT.
         AND IN DIFFERENT CITIES, RADIO WAVES CARRY THE LOCAL FLAVOUR. THAT’S WHY MY MUSIC STARTS WITH RECORDED BITS OF SONGS
-        FROM VARIOUS CITIES AND COUNTRIES, WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.<br><br>
+        FROM VARIOUS CITIES AND COUNTRIES, WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.
         THE TRACKS TITLES WILL HINT AT THEIR ORIGINS. SOME PARTS WERE LATER REWORKED IN THE STUDIO, AND PARTIALLY VOCALS WERE ADDED.
         IT IS A UNIQUE EXPERIENCE OF RECORDING A MOMENT, AN OCCURRENCE THAT CANNOT BE PREDICTED.
-        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.<br><br>
+        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.
         BECAUSE YOU HAD TO PRESS THE "RECORD" BUTTON IN ADVANCE: EVEN BEFORE THE DESIRED PIECE OF MUSIC STARTED PLAYING.
         THAT’S THE CONCEPT. AND THEN IT’S A MATTER OF TASTE.
       </p>
     </div>
   </div>
 
-  <footer class="footer">
-    ALL RIGHTS RESERVED © 2025
-  </footer>
+  <div class="player-wrapper" id="player-wrapper">
+    <div class="player-text">
+      <p>TOSHKENT</p>
+      <p>HYDRA</p>
+      <p>PARIS</p>
+    </div>
+  </div>
 
-<script>
-  const aboutToggle = document.getElementById("about-toggle");
-  const aboutWrapper = document.getElementById("about-wrapper");
+  <footer class="footer">ALL RIGHTS RESERVED © 2025</footer>
 
-  document.addEventListener("click", function (e) {
-    const clickedInsideText = e.target.closest(".about-text");
-    const clickedAbout = e.target === aboutToggle;
+  <script>
+    const aboutToggle = document.getElementById("about-toggle");
+    const aboutWrapper = document.getElementById("about-wrapper");
 
-    const isOpen = aboutWrapper.classList.contains("visible");
+    const playerToggle = document.getElementById("player-toggle");
+    const playerWrapper = document.getElementById("player-wrapper");
 
-    if (!isOpen && clickedAbout) {
-      // Открыть
-      aboutWrapper.classList.add("visible");
-      aboutToggle.classList.add("blurred");
-    } else if (isOpen && (!clickedInsideText || clickedAbout)) {
-      // Закрыть
-      aboutWrapper.classList.remove("visible");
-      aboutToggle.classList.remove("blurred");
-    }
-  });
-</script>
+    document.addEventListener("click", function (e) {
+      const clickedInsideAbout = e.target.closest(".about-text");
+      const clickedInsidePlayer = e.target.closest(".player-text");
 
+      const clickedAbout = e.target === aboutToggle;
+      const clickedPlayer = e.target === playerToggle;
 
+      const aboutOpen = aboutWrapper.classList.contains("visible");
+      const playerOpen = playerWrapper.classList.contains("visible");
 
+      // Toggle ABOUT
+      if (!aboutOpen && clickedAbout) {
+        aboutWrapper.classList.add("visible");
+        aboutToggle.classList.add("blurred");
+        playerWrapper.classList.remove("visible");
+        playerToggle.classList.remove("blurred");
+      } else if (aboutOpen && (!clickedInsideAbout || clickedAbout)) {
+        aboutWrapper.classList.remove("visible");
+        aboutToggle.classList.remove("blurred");
+      }
 
-
+      // Toggle PLAYER
+      if (!playerOpen && clickedPlayer) {
+        playerWrapper.classList.add("visible");
+        playerToggle.classList.add("blurred");
+        aboutWrapper.classList.remove("visible");
+        aboutToggle.classList.remove("blurred");
+      } else if (playerOpen && (!clickedInsidePlayer || clickedPlayer)) {
+        playerWrapper.classList.remove("visible");
+        playerToggle.classList.remove("blurred");
+      }
+    });
+  </script>
 </body>
 </html>
