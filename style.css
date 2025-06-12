@@ -193,3 +193,29 @@ nav a#player-toggle.blurred {
     padding: 1rem 1.5rem;
   }
 }
+
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.track span {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: blue;
+}
+
+.play-btn {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.track:hover .play-btn {
+  filter: blur(2px);
+}
