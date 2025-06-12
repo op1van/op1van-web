@@ -86,7 +86,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* About Block */
+/* ABOUT блок */
 .about-wrapper {
   display: none;
   position: fixed;
@@ -119,7 +119,7 @@ nav a#player-toggle.blurred {
   transition: filter 0.2s ease;
 }
 
-/* Player Block */
+/* PLAYER блок */
 .player-wrapper {
   display: none;
   position: fixed;
@@ -151,6 +151,38 @@ nav a#player-toggle.blurred {
   transition: filter 0.2s ease;
 }
 
+/* Одиночный трек */
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  line-height: 1;
+}
+
+.track span {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: blue;
+  display: inline-block;
+  transform: translateY(1px);
+}
+
+.play-btn {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.track:hover .play-btn {
+  filter: blur(2px);
+}
+
 /* Footer */
 .footer {
   position: fixed;
@@ -170,7 +202,7 @@ nav a#player-toggle.blurred {
   transition: filter 0.2s ease;
 }
 
-/* Mobile */
+/* Мобильная адаптация */
 @media (max-width: 768px) {
   .logo {
     width: 50vw;
@@ -192,30 +224,8 @@ nav a#player-toggle.blurred {
     font-size: 1.1rem;
     padding: 1rem 1.5rem;
   }
-}
 
-.track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.track span {
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: blue;
-}
-
-.play-btn {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  transition: filter 0.2s ease;
-}
-
-.track:hover .play-btn {
-  filter: blur(2px);
+  .footer {
+    font-size: 12px;
+  }
 }
