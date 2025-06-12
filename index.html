@@ -47,16 +47,8 @@
   <div class="player-wrapper" id="player-wrapper">
     <div class="player-text">
       <div class="track" data-audio="paris.mp3">
+        <img src="play.svg" class="play-btn" alt="Play" />
         <span>PARIS</span>
-        <img src="play.svg" class="play-btn" alt="Play" />
-      </div>
-      <div class="track" data-audio="toshkent.mp3">
-        <span>TOSHKENT</span>
-        <img src="play.svg" class="play-btn" alt="Play" />
-      </div>
-      <div class="track" data-audio="hydra.mp3">
-        <span>HYDRA ISLAND</span>
-        <img src="play.svg" class="play-btn" alt="Play" />
       </div>
     </div>
   </div>
@@ -101,36 +93,25 @@
       }
     });
 
-    // Audio player logic
+    // Audio playback for PARIS
     let currentAudio = null;
     let currentBtn = null;
 
-    document.querySelectorAll('.track').forEach(track => {
-      const btn = track.querySelector('.play-btn');
-      const audioSrc = track.dataset.audio;
-      const audio = new Audio(audioSrc);
+    const track = document.querySelector('.track');
+    const playBtn = track.querySelector('.play-btn');
+    const audioSrc = track.dataset.audio;
+    const audio = new Audio(audioSrc);
 
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
 
-        if (currentAudio && currentAudio !== audio) {
-          currentAudio.pause();
-          currentAudio.currentTime = 0;
-          if (currentBtn) currentBtn.src = 'play.svg';
-        }
-
-        if (audio.paused) {
-          audio.play();
-          btn.src = 'pause.svg';
-          currentAudio = audio;
-          currentBtn = btn;
-        } else {
-          audio.pause();
-          btn.src = 'play.svg';
-          currentAudio = null;
-          currentBtn = null;
-        }
-      });
+      if (audio.paused) {
+        audio.play();
+        playBtn.src = 'pause.svg';
+      } else {
+        audio.pause();
+        playBtn.src = 'play.svg';
+      }
     });
   </script>
 </body>
