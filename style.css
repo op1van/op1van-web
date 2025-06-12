@@ -39,7 +39,7 @@ html, body {
 
 .content {
   position: relative;
-  z-index: 10; /* Главное: поднимаем над about-wrapper */
+  z-index: 10;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -53,6 +53,11 @@ html, body {
   max-width: 300px;
   height: auto;
   margin-bottom: 10px;
+}
+
+.logo-link {
+  display: inline-block;
+  cursor: pointer;
 }
 
 nav {
@@ -70,7 +75,18 @@ nav a {
   font-size: 1rem;
 }
 
-/* Центрированный блок текста ABOUT */
+nav a:hover,
+.logo-link:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
+
+nav a#about-toggle.blurred,
+nav a#player-toggle.blurred {
+  filter: blur(2px);
+}
+
+/* About Block */
 .about-wrapper {
   display: none;
   position: fixed;
@@ -78,7 +94,7 @@ nav a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 1;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -98,7 +114,44 @@ nav a {
   text-transform: uppercase;
 }
 
-/* Футер */
+.about-text:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
+
+/* Player Block */
+.player-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.player-wrapper.visible {
+  display: flex;
+}
+
+.player-text {
+  max-width: 600px;
+  color: blue;
+  font-weight: 900;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.player-text:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
+
+/* Footer */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -112,7 +165,12 @@ nav a {
   z-index: 10;
 }
 
-/* Мобильная версия */
+.footer:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .logo {
     width: 50vw;
@@ -129,31 +187,9 @@ nav a {
     font-size: 1rem;
   }
 
-  .about-text {
+  .about-text,
+  .player-text {
     font-size: 1.1rem;
     padding: 1rem 1.5rem;
   }
-}
-
-
-/* Единый ховер-блюр */
-nav a:hover,
-.logo-link:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
-}
-
-/* Активный блюр у ABOUT */
-nav a#about-toggle.blurred {
-  filter: blur(2px);
-}
-
-.about-text:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
-}
-
-.footer:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
 }
