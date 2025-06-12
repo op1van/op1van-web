@@ -46,9 +46,18 @@
 
   <div class="player-wrapper" id="player-wrapper">
     <div class="player-text">
-      <p>TOSHKENT</p>
-      <p>HYDRA</p>
-      <p>PARIS</p>
+      <div class="track" data-audio="paris.mp3">
+        <span>PARIS</span>
+        <img src="play.svg" class="play-btn" alt="Play" />
+      </div>
+      <div class="track" data-audio="toshkent.mp3">
+        <span>TOSHKENT</span>
+        <img src="play.svg" class="play-btn" alt="Play" />
+      </div>
+      <div class="track" data-audio="hydra.mp3">
+        <span>HYDRA ISLAND</span>
+        <img src="play.svg" class="play-btn" alt="Play" />
+      </div>
     </div>
   </div>
 
@@ -71,7 +80,6 @@
       const aboutOpen = aboutWrapper.classList.contains("visible");
       const playerOpen = playerWrapper.classList.contains("visible");
 
-      // Toggle ABOUT
       if (!aboutOpen && clickedAbout) {
         aboutWrapper.classList.add("visible");
         aboutToggle.classList.add("blurred");
@@ -82,7 +90,6 @@
         aboutToggle.classList.remove("blurred");
       }
 
-      // Toggle PLAYER
       if (!playerOpen && clickedPlayer) {
         playerWrapper.classList.add("visible");
         playerToggle.classList.add("blurred");
@@ -92,6 +99,38 @@
         playerWrapper.classList.remove("visible");
         playerToggle.classList.remove("blurred");
       }
+    });
+
+    // Audio player logic
+    let currentAudio = null;
+    let currentBtn = null;
+
+    document.querySelectorAll('.track').forEach(track => {
+      const btn = track.querySelector('.play-btn');
+      const audioSrc = track.dataset.audio;
+      const audio = new Audio(audioSrc);
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          if (currentBtn) currentBtn.src = 'play.svg';
+        }
+
+        if (audio.paused) {
+          audio.play();
+          btn.src = 'pause.svg';
+          currentAudio = audio;
+          currentBtn = btn;
+        } else {
+          audio.pause();
+          btn.src = 'play.svg';
+          currentAudio = null;
+          currentBtn = null;
+        }
+      });
     });
   </script>
 </body>
