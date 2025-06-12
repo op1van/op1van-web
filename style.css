@@ -235,11 +235,12 @@ nav a#player-toggle.blurred {
 .player-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* было center */
   max-width: 600px;
   color: blue;
   font-weight: 900;
   font-size: 1.25rem;
   text-transform: uppercase;
 }
+
 
