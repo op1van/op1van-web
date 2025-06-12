@@ -110,7 +110,7 @@ nav a#player-toggle.blurred {
   color: blue;
   font-weight: 900;
   font-size: 1.25rem;
-  line-height: normal;
+  line-height: 110%;
   text-transform: uppercase;
 }
 
