@@ -205,24 +205,30 @@ nav a#player-toggle.blurred {
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
+  .content {
+    height: 100vh;
+    justify-content: flex-start;
+  }
+
   .logo {
     width: 50vw;
     max-width: none;
+    margin-bottom: 20px;
   }
 
   nav {
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
   }
 
   nav a {
     font-size: 1.125rem;
-  }
-
-  .content {
-    height: 100vh;
-    justify-content: center;
   }
 
   .about-text,
