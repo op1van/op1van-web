@@ -240,6 +240,22 @@ nav a#player-toggle.blurred {
   .footer {
     font-size: 12px;
   }
+
+  .close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+    font-size: 2rem;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+  }
+
+  .mobile-hidden {
+    display: none !important;
+  }
 }
 
 .player-text {
