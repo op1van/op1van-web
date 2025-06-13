@@ -145,11 +145,9 @@ nav a#player-toggle.blurred {
   font-weight: 900;
   font-size: 1.25rem;
   text-transform: uppercase;
-}
-
-.player-text:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* Одиночный трек */
@@ -182,6 +180,10 @@ nav a#player-toggle.blurred {
 
 .track:hover .play-btn {
   filter: blur(2px);
+}
+
+.track:not(:hover) .play-btn {
+  filter: none;
 }
 
 /* Footer */
@@ -237,20 +239,20 @@ nav a#player-toggle.blurred {
   }
 
   .about-text {
-  font-size: 1.75vh;
-  line-height: 1.25;
-  padding: 0 1rem;
-  overflow: hidden;
-  max-height: none;
-}
+    font-size: 2.1vh;
+    line-height: 1.25;
+    padding: 0 1rem;
+    overflow: hidden;
+    max-height: none;
+  }
 
-.player-text {
-  font-size: 1.4vh;
-  line-height: 1.2;
-  padding: 0 1rem;
-  overflow: hidden;
-  max-height: none;
-}
+  .player-text {
+    font-size: 1.4vh;
+    line-height: 1.2;
+    padding: 0 1rem;
+    overflow: hidden;
+    max-height: none;
+  }
 
   .footer {
     font-size: 12px;
@@ -279,15 +281,4 @@ nav a#player-toggle.blurred {
   .mobile-hidden {
     display: none !important;
   }
-}
-
-.player-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 600px;
-  color: blue;
-  font-weight: 900;
-  font-size: 1.25rem;
-  text-transform: uppercase;
 }
