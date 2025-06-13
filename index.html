@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>op1van</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
+
   <div class="video-container">
     <video autoplay muted loop playsinline>
       <source src="video2.mp4" type="video/mp4" />
-      Ваш браузер не поддерживает видео.
     </video>
   </div>
 
   <div class="content">
     <a href="index.html" class="logo-link">
-      <img src="logo.svg" alt="op1van logo" class="logo" />
+      <img src="logo.svg" alt="Logo" class="logo" />
     </a>
     <nav>
       <a href="https://op1van.bandcamp.com/" target="_blank">BANDCAMP</a>
       <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
-      <a href="https://www.tiktok.com/@op1van?_t=ZN-8x7uKjThnxS&_r=1" target="_blank">TIK TOK</a>
+      <a href="https://www.tiktok.com/@op1van" target="_blank">TIK TOK</a>
       <a href="#" id="player-toggle">PLAYER</a>
       <a href="#">VIDEO</a>
       <a href="#" id="about-toggle">ABOUT</a>
@@ -34,13 +34,14 @@
     <div class="about-text">
       <p>
         THE OP-1 – MACHINE ITSELF – HAS AN INTERESTING FEATURE – SAMPLING RADIO STATIONS.
-        I TRAVEL A LOT. AND IN DIFFERENT CITIES, RADIO WAVES CARRY THE LOCAL FLAVOUR. THAT’S WHY MY MUSIC STARTS WITH RECORDED BITS OF SONGS
-        FROM VARIOUS CITIES AND COUNTRIES, WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.<br><br>
-        THE TRACKS TITLES WILL HINT AT THEIR ORIGINS. SOME PARTS WERE LATER REWORKED IN THE STUDIO, AND PARTIALLY VOCALS WERE ADDED.
+        I TRAVEL A LOT. AND IN DIFFERENT CITIES, RADIO WAVES CARRY THE LOCAL FLAVOUR.
+        THAT’S WHY MY MUSIC STARTS WITH RECORDED BITS OF SONGS FROM VARIOUS CITIES AND COUNTRIES,
+        WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.<br><br>
+
+        THE TRACKS TITLES WILL HINT AT THEIR ORIGINS.
+        SOME PARTS WERE LATER REWORKED IN THE STUDIO, AND PARTIALLY VOCALS WERE ADDED.
         IT IS A UNIQUE EXPERIENCE OF RECORDING A MOMENT, AN OCCURRENCE THAT CANNOT BE PREDICTED.
-        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.<br><br>
-        BECAUSE YOU HAD TO PRESS THE "RECORD" BUTTON IN ADVANCE: EVEN BEFORE THE DESIRED PIECE OF MUSIC STARTED PLAYING.
-        THAT’S THE CONCEPT. AND THEN IT’S A MATTER OF TASTE.
+        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.
       </p>
     </div>
   </div>
@@ -63,8 +64,6 @@
   </div>
 
   <footer class="footer">ALL RIGHTS RESERVED © 2025</footer>
-
-  <!-- Кнопка закрытия (вынесена в конец body) -->
   <div class="close-btn" id="close-btn">✕</div>
 
   <script>
@@ -137,6 +136,7 @@
 
     let currentAudio = null;
     let currentBtn = null;
+    let currentTrack = null;
 
     document.querySelectorAll('.track').forEach(track => {
       const btn = track.querySelector('.play-btn');
@@ -150,6 +150,7 @@
           currentAudio.pause();
           currentAudio.currentTime = 0;
           if (currentBtn) currentBtn.src = 'play.svg';
+          if (currentTrack) currentTrack.classList.remove('blurred');
         }
 
         if (audio.paused) {
@@ -157,14 +158,19 @@
           btn.src = 'pause.svg';
           currentAudio = audio;
           currentBtn = btn;
+          currentTrack = track;
+          track.classList.add('blurred');
         } else {
           audio.pause();
           btn.src = 'play.svg';
+          track.classList.remove('blurred');
           currentAudio = null;
           currentBtn = null;
+          currentTrack = null;
         }
       });
     });
   </script>
+
 </body>
 </html>
