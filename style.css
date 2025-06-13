@@ -203,6 +203,11 @@ nav a#player-toggle.blurred {
   transition: filter 0.2s ease;
 }
 
+/* По умолчанию кнопка ✕ скрыта */
+.close-btn {
+  display: none;
+}
+
 /* Мобильная адаптация */
 @media (max-width: 768px) {
   .content {
@@ -243,14 +248,22 @@ nav a#player-toggle.blurred {
 
   .close-btn {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 20;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
     font-size: 2rem;
     color: blue;
     font-weight: bold;
     cursor: pointer;
     display: none;
+    background: transparent;
+    border: none;
+    line-height: 1;
+  }
+
+  .about-wrapper.visible ~ .close-btn,
+  .player-wrapper.visible ~ .close-btn {
+    display: block;
   }
 
   .mobile-hidden {
