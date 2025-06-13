@@ -115,11 +115,6 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
 }
 
-.about-text:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
-}
-
 /* PLAYER блок */
 .player-wrapper {
   display: none;
@@ -150,7 +145,7 @@ nav a#player-toggle.blurred {
   align-items: flex-start;
 }
 
-/* Одиночный трек */
+/* Трек + логика блюра */
 .track {
   display: flex;
   align-items: center;
@@ -178,7 +173,7 @@ nav a#player-toggle.blurred {
   cursor: pointer;
 }
 
-.track:hover {
+.track.blurred {
   filter: blur(2px);
 }
 
@@ -201,12 +196,10 @@ nav a#player-toggle.blurred {
   transition: filter 0.2s ease;
 }
 
-/* По умолчанию кнопка ✕ скрыта */
 .close-btn {
   display: none;
 }
 
-/* Мобильная адаптация */
 @media (max-width: 768px) {
   .content {
     height: 100vh;
