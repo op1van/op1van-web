@@ -283,8 +283,9 @@ nav a#player-toggle.blurred {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: white; /* ← исправлено */
 }
+
 
 .video-wrapper.visible {
   display: flex;
