@@ -185,7 +185,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -204,7 +204,6 @@ nav a#player-toggle.blurred {
   transition: filter 0.2s ease;
 }
 
-/* Закрывающая кнопка */
 .close-btn {
   display: none;
 }
@@ -252,7 +251,7 @@ nav a#player-toggle.blurred {
   z-index: 2;
 }
 
-/* Мобильная версия */
+/* MOBILE */
 @media (max-width: 768px) {
   .content {
     height: 100vh;
@@ -265,10 +264,10 @@ nav a#player-toggle.blurred {
   }
 
   .menu {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .logo {
