@@ -35,7 +35,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
+  opacity: 1; /* Фоновое видео не прозрачное */
 }
 
 .content {
@@ -87,7 +87,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* ABOUT блок */
+/* ABOUT */
 .about-wrapper {
   display: none;
   position: fixed;
@@ -100,6 +100,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  background: white;
 }
 
 .about-wrapper.visible {
@@ -115,7 +116,7 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
 }
 
-/* PLAYER блок */
+/* PLAYER */
 .player-wrapper {
   display: none;
   position: fixed;
@@ -128,6 +129,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  background: white;
 }
 
 .player-wrapper.visible {
@@ -145,7 +147,7 @@ nav a#player-toggle.blurred {
   align-items: flex-start;
 }
 
-/* Трек + логика блюра */
+/* TRACKS */
 .track {
   display: flex;
   align-items: center;
@@ -177,7 +179,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -263,7 +265,8 @@ nav a#player-toggle.blurred {
   }
 
   .about-wrapper.visible ~ .close-btn,
-  .player-wrapper.visible ~ .close-btn {
+  .player-wrapper.visible ~ .close-btn,
+  .video-wrapper.visible ~ .close-btn {
     display: block;
   }
 
@@ -272,7 +275,7 @@ nav a#player-toggle.blurred {
   }
 }
 
-/* VIDEO блок */
+/* VIDEO */
 .video-wrapper {
   display: none;
   position: fixed;
@@ -283,9 +286,8 @@ nav a#player-toggle.blurred {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: white; /* ← исправлено */
+  background: white;
 }
-
 
 .video-wrapper.visible {
   display: flex;
@@ -324,9 +326,5 @@ nav a#player-toggle.blurred {
 
   .video-box video {
     object-fit: cover;
-  }
-
-  .video-wrapper.visible ~ .close-btn {
-    display: block;
   }
 }
