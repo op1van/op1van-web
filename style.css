@@ -87,7 +87,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* ABOUT блок */
+/* ABOUT */
 .about-wrapper {
   display: none;
   position: fixed;
@@ -100,6 +100,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  background: white;
 }
 
 .about-wrapper.visible {
@@ -115,7 +116,7 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
 }
 
-/* PLAYER блок */
+/* PLAYER */
 .player-wrapper {
   display: none;
   position: fixed;
@@ -128,6 +129,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  background: white;
 }
 
 .player-wrapper.visible {
@@ -145,7 +147,7 @@ nav a#player-toggle.blurred {
   align-items: flex-start;
 }
 
-/* Трек + логика блюра */
+/* TRACKS */
 .track {
   display: flex;
   align-items: center;
@@ -177,7 +179,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -203,7 +205,11 @@ nav a#player-toggle.blurred {
 @media (max-width: 768px) {
   .content {
     height: 100vh;
-    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центр по вертикали */
+    align-items: center;
+    padding-top: 0;
   }
 
   .logo {
@@ -215,12 +221,8 @@ nav a#player-toggle.blurred {
   nav {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
+    gap: 12px; /* Уменьшено в 2 раза */
+    margin: 0;
   }
 
   nav a {
@@ -263,7 +265,8 @@ nav a#player-toggle.blurred {
   }
 
   .about-wrapper.visible ~ .close-btn,
-  .player-wrapper.visible ~ .close-btn {
+  .player-wrapper.visible ~ .close-btn,
+  .video-wrapper.visible ~ .close-btn {
     display: block;
   }
 
@@ -272,6 +275,7 @@ nav a#player-toggle.blurred {
   }
 }
 
+/* VIDEO */
 .video-wrapper {
   display: none;
   position: fixed;
@@ -323,9 +327,4 @@ nav a#player-toggle.blurred {
   .video-box video {
     object-fit: cover;
   }
-
-  .video-wrapper.visible ~ .close-btn {
-    display: block;
-  }
 }
-
