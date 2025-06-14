@@ -29,14 +29,14 @@ html, body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  opacity: 1 !important; /* <-- гарантия непрозрачности */
+  opacity: 1 !important;
 }
 
 .video-container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1 !important; /* <-- гарантия непрозрачности */
+  opacity: 1 !important;
 }
 
 .content {
@@ -107,7 +107,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: none;
 }
 
 .about-wrapper.visible {
@@ -121,6 +121,9 @@ nav a#player-toggle.blurred {
   font-size: 1.25rem;
   line-height: 135%;
   text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2rem;
+  border-radius: 12px;
 }
 
 /* PLAYER */
@@ -136,7 +139,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: none;
 }
 
 .player-wrapper.visible {
@@ -152,9 +155,12 @@ nav a#player-toggle.blurred {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2rem;
+  border-radius: 12px;
 }
 
-/* ТРЕКИ */
+/* TRACKS */
 .track {
   display: flex;
   align-items: center;
@@ -220,7 +226,7 @@ nav a#player-toggle.blurred {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.92);
+  background: none;
 }
 
 .video-wrapper.visible {
@@ -232,6 +238,9 @@ nav a#player-toggle.blurred {
   width: 100%;
   max-width: 800px;
   height: 400px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .video-box video {
@@ -291,22 +300,19 @@ nav a#player-toggle.blurred {
   .about-text {
     font-size: 2.1vh;
     line-height: 1.25;
-    padding: 0 1rem;
-    overflow: hidden;
-    max-height: none;
+    padding: 2rem;
   }
 
   .player-text {
     font-size: 1.4vh;
     line-height: 1.2;
-    padding: 0 1rem;
-    overflow: hidden;
-    max-height: none;
+    padding: 2rem;
   }
 
   .video-box {
     width: 100vw;
     height: 100vh;
+    border-radius: 0;
   }
 
   .video-box video {
