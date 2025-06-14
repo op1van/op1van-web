@@ -162,7 +162,7 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
   color: blue;
   display: inline-block;
-  transform: translateY(3px);
+  transform: translateY(2.5px);
 }
 
 .play-btn {
