@@ -29,13 +29,14 @@ html, body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
+  opacity: 1 !important; /* <-- гарантия непрозрачности */
 }
 
 .video-container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
+  opacity: 1 !important; /* <-- гарантия непрозрачности */
 }
 
 .content {
@@ -93,7 +94,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* ABOUT блок */
+/* ABOUT */
 .about-wrapper {
   display: none;
   position: fixed;
@@ -106,7 +107,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.92); /* прозрачность */
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .about-wrapper.visible {
@@ -122,7 +123,7 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
 }
 
-/* PLAYER блок */
+/* PLAYER */
 .player-wrapper {
   display: none;
   position: fixed;
@@ -135,7 +136,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.92); /* прозрачность */
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .player-wrapper.visible {
@@ -153,7 +154,7 @@ nav a#player-toggle.blurred {
   align-items: flex-start;
 }
 
-/* Треки */
+/* ТРЕКИ */
 .track {
   display: flex;
   align-items: center;
@@ -208,7 +209,7 @@ nav a#player-toggle.blurred {
   display: none;
 }
 
-/* VIDEO блок */
+/* VIDEO */
 .video-wrapper {
   display: none;
   position: fixed;
@@ -219,7 +220,7 @@ nav a#player-toggle.blurred {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.92); /* прозрачность */
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .video-wrapper.visible {
