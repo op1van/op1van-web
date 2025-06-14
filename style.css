@@ -35,7 +35,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1; /* Фоновое видео не прозрачное */
+  opacity: 1;
 }
 
 .content {
@@ -87,7 +87,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* ABOUT */
+/* ABOUT блок */
 .about-wrapper {
   display: none;
   position: fixed;
@@ -100,7 +100,6 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: white;
 }
 
 .about-wrapper.visible {
@@ -116,7 +115,7 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
 }
 
-/* PLAYER */
+/* PLAYER блок */
 .player-wrapper {
   display: none;
   position: fixed;
@@ -129,7 +128,6 @@ nav a#player-toggle.blurred {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: white;
 }
 
 .player-wrapper.visible {
@@ -147,7 +145,7 @@ nav a#player-toggle.blurred {
   align-items: flex-start;
 }
 
-/* TRACKS */
+/* Трек + логика блюра */
 .track {
   display: flex;
   align-items: center;
@@ -179,7 +177,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* FOOTER */
+/* Footer */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -265,66 +263,11 @@ nav a#player-toggle.blurred {
   }
 
   .about-wrapper.visible ~ .close-btn,
-  .player-wrapper.visible ~ .close-btn,
-  .video-wrapper.visible ~ .close-btn {
+  .player-wrapper.visible ~ .close-btn {
     display: block;
   }
 
   .mobile-hidden {
     display: none !important;
-  }
-}
-
-/* VIDEO */
-.video-wrapper {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background: white;
-}
-
-.video-wrapper.visible {
-  display: flex;
-}
-
-.video-box {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  height: 400px;
-}
-
-.video-box video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: black;
-}
-
-.video-control {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  z-index: 2;
-}
-
-@media (max-width: 768px) {
-  .video-box {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .video-box video {
-    object-fit: cover;
   }
 }
