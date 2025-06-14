@@ -9,71 +9,69 @@
 </head>
 <body>
 
-  <!-- Фоновое видео -->
   <div class="video-container">
     <video autoplay muted loop playsinline>
       <source src="video2.mp4" type="video/mp4" />
     </video>
   </div>
 
-  <!-- Контент -->
   <div class="content">
-    <a href="#" class="logo-link">
+    <a href="index.html" class="logo-link">
       <img src="logo.svg" alt="Logo" class="logo" />
     </a>
     <nav>
-      <a href="#">BANDCAMP</a>
-      <a href="#">INSTAGRAM</a>
-      <a href="#">TIK TOK</a>
+      <a href="https://op1van.bandcamp.com/" target="_blank">BANDCAMP</a>
+      <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
+      <a href="https://www.tiktok.com/@op1van" target="_blank">TIK TOK</a>
       <a href="#" id="player-toggle">PLAYER</a>
-      <a href="#" id="video-toggle">VIDEO</a>
+      <a href="#">VIDEO</a>
       <a href="#" id="about-toggle">ABOUT</a>
       <a href="#">CONTACT</a>
     </nav>
   </div>
 
-  <!-- About -->
   <div class="about-wrapper" id="about-wrapper">
     <div class="about-text">
-      THE OP-1 – MACHINE ITSELF – HAS AN INTERESTING FEATURE – SAMPLING RADIO STATIONS.<br><br>
-      PIECE OF MUSIC.
+      <p>
+        THE OP-1 – MACHINE ITSELF – HAS AN INTERESTING FEATURE – SAMPLING RADIO STATIONS.
+        I TRAVEL A LOT. AND IN DIFFERENT CITIES, RADIO WAVES CARRY THE LOCAL FLAVOUR.
+        THAT’S WHY MY MUSIC STARTS WITH RECORDED BITS OF SONGS FROM VARIOUS CITIES AND COUNTRIES,
+        WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.<br><br>
+
+        THE TRACKS TITLES WILL HINT AT THEIR ORIGINS.
+        SOME PARTS WERE LATER REWORKED IN THE STUDIO, AND PARTIALLY VOCALS WERE ADDED.
+        IT IS A UNIQUE EXPERIENCE OF RECORDING A MOMENT, AN OCCURRENCE THAT CANNOT BE PREDICTED.
+        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.
+      </p>
     </div>
   </div>
 
-  <!-- Player -->
   <div class="player-wrapper" id="player-wrapper">
     <div class="player-text">
       <div class="track" data-audio="paris.mp3">
         <img src="play.svg" class="play-btn" alt="Play" />
         <span>PARIS 03:20</span>
       </div>
+      <div class="track" data-audio="toshkent.mp3">
+        <img src="play.svg" class="play-btn" alt="Play" />
+        <span>TOSHKENT 03:15</span>
+      </div>
+      <div class="track" data-audio="hydraisland.mp3">
+        <img src="play.svg" class="play-btn" alt="Play" />
+        <span>HYDRA ISLAND 02:07</span>
+      </div>
     </div>
   </div>
 
-  <!-- Video -->
-  <div class="video-wrapper" id="video-wrapper">
-    <div class="video-box">
-      <video id="custom-video" src="video.mp4" preload="metadata"></video>
-      <img src="play.svg" id="video-play-btn" alt="Play" class="video-control" />
-    </div>
-  </div>
-
-  <!-- Close -->
   <footer class="footer">ALL RIGHTS RESERVED © 2025</footer>
   <div class="close-btn" id="close-btn">✕</div>
 
-  <!-- Script -->
   <script>
     const aboutToggle = document.getElementById("about-toggle");
     const aboutWrapper = document.getElementById("about-wrapper");
 
     const playerToggle = document.getElementById("player-toggle");
     const playerWrapper = document.getElementById("player-wrapper");
-
-    const videoToggle = document.getElementById("video-toggle");
-    const videoWrapper = document.getElementById("video-wrapper");
-    const video = document.getElementById("custom-video");
-    const videoBtn = document.getElementById("video-play-btn");
 
     const closeBtn = document.getElementById("close-btn");
     const content = document.querySelector(".content");
@@ -94,45 +92,45 @@
     }
 
     document.addEventListener("click", function (e) {
+      const clickedInsideAbout = e.target.closest(".about-text");
+      const clickedInsidePlayer = e.target.closest(".player-text");
+
       const clickedAbout = e.target === aboutToggle;
       const clickedPlayer = e.target === playerToggle;
-      const clickedVideo = e.target === videoToggle;
 
-      if (clickedAbout) {
-        aboutWrapper.classList.toggle("visible");
+      const aboutOpen = aboutWrapper.classList.contains("visible");
+      const playerOpen = playerWrapper.classList.contains("visible");
+
+      if (!aboutOpen && clickedAbout) {
+        aboutWrapper.classList.add("visible");
+        aboutToggle.classList.add("blurred");
         playerWrapper.classList.remove("visible");
-        videoWrapper.classList.remove("visible");
-        video.pause();
-        video.currentTime = 0;
-        videoBtn.src = "play.svg";
+        playerToggle.classList.remove("blurred");
         showCloseButton();
+      } else if (aboutOpen && (!clickedInsideAbout || clickedAbout)) {
+        aboutWrapper.classList.remove("visible");
+        aboutToggle.classList.remove("blurred");
+        hideCloseButton();
       }
 
-      if (clickedPlayer) {
-        playerWrapper.classList.toggle("visible");
+      if (!playerOpen && clickedPlayer) {
+        playerWrapper.classList.add("visible");
+        playerToggle.classList.add("blurred");
         aboutWrapper.classList.remove("visible");
-        videoWrapper.classList.remove("visible");
-        video.pause();
-        video.currentTime = 0;
-        videoBtn.src = "play.svg";
+        aboutToggle.classList.remove("blurred");
         showCloseButton();
-      }
-
-      if (clickedVideo) {
-        videoWrapper.classList.toggle("visible");
-        aboutWrapper.classList.remove("visible");
+      } else if (playerOpen && (!clickedInsidePlayer || clickedPlayer)) {
         playerWrapper.classList.remove("visible");
-        showCloseButton();
+        playerToggle.classList.remove("blurred");
+        hideCloseButton();
       }
     });
 
     closeBtn.addEventListener("click", () => {
       aboutWrapper.classList.remove("visible");
       playerWrapper.classList.remove("visible");
-      videoWrapper.classList.remove("visible");
-      video.pause();
-      video.currentTime = 0;
-      videoBtn.src = "play.svg";
+      aboutToggle.classList.remove("blurred");
+      playerToggle.classList.remove("blurred");
       hideCloseButton();
     });
 
@@ -172,17 +170,7 @@
         }
       });
     });
-
-    videoBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (video.paused) {
-        video.play();
-        videoBtn.src = "pause.svg";
-      } else {
-        video.pause();
-        videoBtn.src = "play.svg";
-      }
-    });
   </script>
+
 </body>
 </html>
