@@ -9,11 +9,7 @@
 </head>
 <body>
 
-  <div class="video-container">
-    <video autoplay muted loop playsinline>
-      <source src="video2.mp4" type="video/mp4" />
-    </video>
-  </div>
+  <div class="background-image"></div>
 
   <div class="content">
     <a href="index.html" class="logo-link">
@@ -50,6 +46,11 @@
 
   <div class="player-wrapper" id="player-wrapper">
     <div class="player-text">
+      <div class="album-title">
+        <div>EP 2025</div>
+        <div>I sampled the radio 2</div>
+      </div>
+
       <div class="track" data-audio="paris.mp3">
         <img src="play.svg" class="play-btn" alt="Play" />
         <span>PARIS 03:20</span>
@@ -78,15 +79,12 @@
   <script>
     const aboutToggle = document.getElementById("about-toggle");
     const aboutWrapper = document.getElementById("about-wrapper");
-
     const playerToggle = document.getElementById("player-toggle");
     const playerWrapper = document.getElementById("player-wrapper");
-
     const videoToggle = document.getElementById("video-toggle");
     const videoWrapper = document.getElementById("video-wrapper");
     const video = document.getElementById("custom-video");
     const videoBtn = document.getElementById("video-play-btn");
-
     const closeBtn = document.getElementById("close-btn");
     const content = document.querySelector(".content");
     const footer = document.querySelector(".footer");
