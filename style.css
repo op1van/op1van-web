@@ -20,23 +20,17 @@ html, body {
   background: transparent;
 }
 
-.video-container {
+.background-image {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('picture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: 1 !important;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1 !important;
 }
 
 .content {
@@ -94,8 +88,9 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* ABOUT */
-.about-wrapper {
+.about-wrapper,
+.player-wrapper,
+.video-wrapper {
   display: none;
   position: fixed;
   top: 0;
@@ -110,7 +105,9 @@ nav a#player-toggle.blurred {
   background: none;
 }
 
-.about-wrapper.visible {
+.about-wrapper.visible,
+.player-wrapper.visible,
+.video-wrapper.visible {
   display: flex;
 }
 
@@ -121,26 +118,6 @@ nav a#player-toggle.blurred {
   font-size: 1.25rem;
   line-height: 135%;
   text-transform: uppercase;
-}
-
-/* PLAYER */
-.player-wrapper {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  background: none;
-}
-
-.player-wrapper.visible {
-  display: flex;
 }
 
 .player-text {
@@ -154,7 +131,15 @@ nav a#player-toggle.blurred {
   align-items: flex-start;
 }
 
-/* TRACKS */
+.album-title {
+  margin-bottom: 50px;
+  color: blue;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
 .track {
   display: flex;
   align-items: center;
@@ -186,7 +171,6 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* FOOTER */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -207,24 +191,6 @@ nav a#player-toggle.blurred {
 
 .close-btn {
   display: none;
-}
-
-/* VIDEO */
-.video-wrapper {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background: none;
-}
-
-.video-wrapper.visible {
-  display: flex;
 }
 
 .video-box {
