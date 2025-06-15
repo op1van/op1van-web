@@ -88,6 +88,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
+/* ABOUT / PLAYER / VIDEO wrappers */
 .about-wrapper,
 .player-wrapper,
 .video-wrapper {
@@ -120,6 +121,7 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
 }
 
+/* PLAYER content */
 .player-text {
   max-width: 600px;
   color: blue;
@@ -138,8 +140,11 @@ nav a#player-toggle.blurred {
   font-size: 1.25rem;
   text-transform: uppercase;
   line-height: 1.2;
+  text-align: left;
+  align-items: flex-start;
 }
 
+/* TRACKS */
 .track {
   display: flex;
   align-items: center;
@@ -171,6 +176,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
+/* FOOTER */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -193,6 +199,7 @@ nav a#player-toggle.blurred {
   display: none;
 }
 
+/* VIDEO player modal */
 .video-box {
   position: relative;
   width: 100%;
@@ -218,7 +225,7 @@ nav a#player-toggle.blurred {
   z-index: 2;
 }
 
-/* MOBILE */
+/* MOBILE styles */
 @media (max-width: 768px) {
   .content {
     height: 100vh;
