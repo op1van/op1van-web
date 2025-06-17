@@ -201,10 +201,13 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
   color: blue;
   z-index: 10;
+  cursor: url('cursor.svg') 4 4, default; /* ← fallback добавлен */
   user-select: none;
-  cursor: url('cursor.svg') 4 4, auto;
-  display: inline-block; /* 👈 делает курсор применимым */
+  pointer-events: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
+
 
 
 .footer:hover {
