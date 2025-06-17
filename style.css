@@ -276,3 +276,8 @@ nav a#player-toggle.blurred {
     display: none !important;
   }
 }
+
+.album-title:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
