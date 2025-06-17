@@ -22,7 +22,6 @@
         <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
         <a href="https://www.tiktok.com/@op1van" target="_blank">TIK TOK</a>
         <a href="#" id="player-toggle">PLAYER</a>
-        <a href="#" id="video-toggle">VIDEO</a>
         <a href="#" id="about-toggle">ABOUT</a>
         <a href="#">CONTACT</a>
       </nav>
@@ -66,13 +65,6 @@
     </div>
   </div>
 
-  <div class="video-wrapper" id="video-wrapper">
-    <div class="video-box">
-      <video id="custom-video" src="video.mp4" preload="metadata"></video>
-      <img src="play.svg" id="video-play-btn" alt="Play" class="video-control" />
-    </div>
-  </div>
-
   <footer class="footer">ALL RIGHTS RESERVED © 2025</footer>
   <div class="close-btn" id="close-btn">✕</div>
 
@@ -81,10 +73,6 @@
     const aboutWrapper = document.getElementById("about-wrapper");
     const playerToggle = document.getElementById("player-toggle");
     const playerWrapper = document.getElementById("player-wrapper");
-    const videoToggle = document.getElementById("video-toggle");
-    const videoWrapper = document.getElementById("video-wrapper");
-    const video = document.getElementById("custom-video");
-    const videoBtn = document.getElementById("video-play-btn");
     const closeBtn = document.getElementById("close-btn");
     const content = document.querySelector(".content");
     const footer = document.querySelector(".footer");
@@ -106,22 +94,18 @@
     document.addEventListener("click", function (e) {
       const clickedInsideAbout = e.target.closest(".about-text");
       const clickedInsidePlayer = e.target.closest(".player-text");
-      const clickedInsideVideo = e.target.closest(".video-box");
 
       const clickedAbout = e.target === aboutToggle;
       const clickedPlayer = e.target === playerToggle;
-      const clickedVideo = e.target === videoToggle;
 
       const aboutOpen = aboutWrapper.classList.contains("visible");
       const playerOpen = playerWrapper.classList.contains("visible");
-      const videoOpen = videoWrapper.classList.contains("visible");
 
       if (!aboutOpen && clickedAbout) {
         aboutWrapper.classList.add("visible");
         aboutToggle.classList.add("blurred");
         playerWrapper.classList.remove("visible");
         playerToggle.classList.remove("blurred");
-        videoWrapper.classList.remove("visible");
         showCloseButton();
       } else if (aboutOpen && (!clickedInsideAbout || clickedAbout)) {
         aboutWrapper.classList.remove("visible");
@@ -134,24 +118,10 @@
         playerToggle.classList.add("blurred");
         aboutWrapper.classList.remove("visible");
         aboutToggle.classList.remove("blurred");
-        videoWrapper.classList.remove("visible");
         showCloseButton();
       } else if (playerOpen && (!clickedInsidePlayer || clickedPlayer)) {
         playerWrapper.classList.remove("visible");
         playerToggle.classList.remove("blurred");
-        hideCloseButton();
-      }
-
-      if (!videoOpen && clickedVideo) {
-        videoWrapper.classList.add("visible");
-        aboutWrapper.classList.remove("visible");
-        playerWrapper.classList.remove("visible");
-        showCloseButton();
-      } else if (videoOpen && (!clickedInsideVideo || clickedVideo)) {
-        videoWrapper.classList.remove("visible");
-        video.pause();
-        video.currentTime = 0;
-        videoBtn.src = "play.svg";
         hideCloseButton();
       }
     });
@@ -159,12 +129,8 @@
     closeBtn.addEventListener("click", () => {
       aboutWrapper.classList.remove("visible");
       playerWrapper.classList.remove("visible");
-      videoWrapper.classList.remove("visible");
       aboutToggle.classList.remove("blurred");
       playerToggle.classList.remove("blurred");
-      video.pause();
-      video.currentTime = 0;
-      videoBtn.src = "play.svg";
       hideCloseButton();
     });
 
@@ -204,18 +170,6 @@
         }
       });
     });
-
-    videoBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (video.paused) {
-        video.play();
-        videoBtn.src = "pause.svg";
-      } else {
-        video.pause();
-        videoBtn.src = "play.svg";
-      }
-    });
   </script>
-
 </body>
 </html>
