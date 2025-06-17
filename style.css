@@ -88,10 +88,8 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* ABOUT / PLAYER / VIDEO wrappers */
 .about-wrapper,
-.player-wrapper,
-.video-wrapper {
+.player-wrapper {
   display: none;
   position: fixed;
   top: 0;
@@ -107,8 +105,7 @@ nav a#player-toggle.blurred {
 }
 
 .about-wrapper.visible,
-.player-wrapper.visible,
-.video-wrapper.visible {
+.player-wrapper.visible {
   display: flex;
 }
 
@@ -121,7 +118,11 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
 }
 
-/* PLAYER content */
+.about-text:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
+}
+
 .player-text {
   max-width: 600px;
   color: blue;
@@ -144,7 +145,6 @@ nav a#player-toggle.blurred {
   align-items: flex-start;
 }
 
-/* TRACKS */
 .track {
   display: flex;
   align-items: center;
@@ -153,6 +153,10 @@ nav a#player-toggle.blurred {
   margin-bottom: 7px;
   line-height: 1;
   transition: filter 0.2s ease;
+}
+
+.track:hover {
+  filter: blur(2px);
 }
 
 .track span {
@@ -176,7 +180,6 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
-/* FOOTER */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -199,33 +202,7 @@ nav a#player-toggle.blurred {
   display: none;
 }
 
-/* VIDEO player modal */
-.video-box {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  height: 400px;
-}
-
-.video-box video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: black;
-}
-
-.video-control {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  z-index: 2;
-}
-
-/* MOBILE styles */
+/* MOBILE */
 @media (max-width: 768px) {
   .content {
     height: 100vh;
@@ -271,15 +248,6 @@ nav a#player-toggle.blurred {
     line-height: 1.2;
   }
 
-  .video-box {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .video-box video {
-    object-fit: cover;
-  }
-
   .footer {
     font-size: 12px;
   }
@@ -300,8 +268,7 @@ nav a#player-toggle.blurred {
   }
 
   .about-wrapper.visible ~ .close-btn,
-  .player-wrapper.visible ~ .close-btn,
-  .video-wrapper.visible ~ .close-btn {
+  .player-wrapper.visible ~ .close-btn {
     display: block;
   }
 
