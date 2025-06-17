@@ -18,6 +18,7 @@ html, body {
   overflow-x: hidden;
   font-family: 'CustomFont', sans-serif;
   background: transparent;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
 .background-image {
@@ -59,7 +60,7 @@ html, body {
 
 .logo-link {
   display: inline-block;
-  cursor: pointer;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
 nav {
@@ -75,6 +76,7 @@ nav a {
   color: blue;
   font-weight: bold;
   font-size: 1rem;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
 nav a:hover,
@@ -116,6 +118,7 @@ nav a#player-toggle.blurred {
   font-size: 1.25rem;
   line-height: 135%;
   text-transform: uppercase;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
 .about-text:hover {
@@ -143,6 +146,12 @@ nav a#player-toggle.blurred {
   line-height: 1.2;
   text-align: left;
   align-items: flex-start;
+  cursor: url('cursor.svg') 4 4, auto;
+}
+
+.album-title:hover {
+  filter: blur(2px);
+  transition: filter 0.2s ease;
 }
 
 .track {
@@ -153,6 +162,7 @@ nav a#player-toggle.blurred {
   margin-bottom: 7px;
   line-height: 1;
   transition: filter 0.2s ease;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
 .track:hover {
@@ -173,7 +183,7 @@ nav a#player-toggle.blurred {
   height: 20px;
   object-fit: contain;
   display: block;
-  cursor: pointer;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
 .track.blurred {
@@ -200,6 +210,7 @@ nav a#player-toggle.blurred {
 
 .close-btn {
   display: none;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
 /* MOBILE */
@@ -260,7 +271,6 @@ nav a#player-toggle.blurred {
     font-size: 2rem;
     color: blue;
     font-weight: bold;
-    cursor: pointer;
     display: none;
     background: transparent;
     border: none;
@@ -275,9 +285,4 @@ nav a#player-toggle.blurred {
   .mobile-hidden {
     display: none !important;
   }
-}
-
-.album-title:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
 }
