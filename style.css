@@ -201,9 +201,11 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
   color: blue;
   z-index: 10;
-  cursor: url('cursor.svg') 4 4, auto;
   user-select: none;
+  cursor: url('cursor.svg') 4 4, auto;
+  display: inline-block; /* 👈 делает курсор применимым */
 }
+
 
 .footer:hover {
   filter: blur(2px);
