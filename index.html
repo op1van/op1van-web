@@ -65,111 +65,44 @@
     </div>
   </div>
 
-  <footer class="footer"><span class="footer-text">ALL RIGHTS RESERVED © 2025</span></footer>
+  <footer class="footer">
+    <span class="footer-text">ALL RIGHTS RESERVED © 2025</span>
+  </footer>
+
   <div class="close-btn" id="close-btn">✕</div>
 
+  <!-- Cookie banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-text">
+      We use cookies to improve your experience, personalize content, and analyze traffic.
+      You can accept or reject non-essential cookies. Learn more in our Privacy & Cookie Policy.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-accept" id="cookie-accept">Accept</button>
+      <button class="cookie-reject" id="cookie-reject">Reject</button>
+      <a class="cookie-learn" href="/privacy-policy" target="_blank">Learn more</a>
+    </div>
+  </div>
+
   <script>
-    const aboutToggle = document.getElementById("about-toggle");
-    const aboutWrapper = document.getElementById("about-wrapper");
-    const playerToggle = document.getElementById("player-toggle");
-    const playerWrapper = document.getElementById("player-wrapper");
-    const closeBtn = document.getElementById("close-btn");
-    const content = document.querySelector(".content");
-    const footer = document.querySelector(".footer");
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const rejectBtn = document.getElementById('cookie-reject');
 
-    function showCloseButton() {
-      if (window.innerWidth <= 768) {
-        closeBtn.style.display = "block";
-        content.classList.add("mobile-hidden");
-        footer.classList.add("mobile-hidden");
-      }
+    if (!localStorage.getItem('cookiesDecision')) {
+      banner.style.display = 'flex';
     }
 
-    function hideCloseButton() {
-      closeBtn.style.display = "none";
-      content.classList.remove("mobile-hidden");
-      footer.classList.remove("mobile-hidden");
-    }
-
-    document.addEventListener("click", function (e) {
-      const clickedInsideAbout = e.target.closest(".about-text");
-      const clickedInsidePlayer = e.target.closest(".player-text");
-
-      const clickedAbout = e.target === aboutToggle;
-      const clickedPlayer = e.target === playerToggle;
-
-      const aboutOpen = aboutWrapper.classList.contains("visible");
-      const playerOpen = playerWrapper.classList.contains("visible");
-
-      if (!aboutOpen && clickedAbout) {
-        aboutWrapper.classList.add("visible");
-        aboutToggle.classList.add("blurred");
-        playerWrapper.classList.remove("visible");
-        playerToggle.classList.remove("blurred");
-        showCloseButton();
-      } else if (aboutOpen && (!clickedInsideAbout || clickedAbout)) {
-        aboutWrapper.classList.remove("visible");
-        aboutToggle.classList.remove("blurred");
-        hideCloseButton();
-      }
-
-      if (!playerOpen && clickedPlayer) {
-        playerWrapper.classList.add("visible");
-        playerToggle.classList.add("blurred");
-        aboutWrapper.classList.remove("visible");
-        aboutToggle.classList.remove("blurred");
-        showCloseButton();
-      } else if (playerOpen && (!clickedInsidePlayer || clickedPlayer)) {
-        playerWrapper.classList.remove("visible");
-        playerToggle.classList.remove("blurred");
-        hideCloseButton();
-      }
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookiesDecision', 'accepted');
+      banner.style.display = 'none';
     });
 
-    closeBtn.addEventListener("click", () => {
-      aboutWrapper.classList.remove("visible");
-      playerWrapper.classList.remove("visible");
-      aboutToggle.classList.remove("blurred");
-      playerToggle.classList.remove("blurred");
-      hideCloseButton();
-    });
-
-    let currentAudio = null;
-    let currentBtn = null;
-    let currentTrack = null;
-
-    document.querySelectorAll('.track').forEach(track => {
-      const btn = track.querySelector('.play-btn');
-      const audioSrc = track.dataset.audio;
-      const audio = new Audio(audioSrc);
-
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-
-        if (currentAudio && currentAudio !== audio) {
-          currentAudio.pause();
-          currentAudio.currentTime = 0;
-          if (currentBtn) currentBtn.src = 'play.svg';
-          if (currentTrack) currentTrack.classList.remove('blurred');
-        }
-
-        if (audio.paused) {
-          audio.play();
-          btn.src = 'pause.svg';
-          currentAudio = audio;
-          currentBtn = btn;
-          currentTrack = track;
-          track.classList.add('blurred');
-        } else {
-          audio.pause();
-          btn.src = 'play.svg';
-          track.classList.remove('blurred');
-          currentAudio = null;
-          currentBtn = null;
-          currentTrack = null;
-        }
-      });
+    rejectBtn.addEventListener('click', () => {
+      localStorage.setItem('cookiesDecision', 'rejected');
+      banner.style.display = 'none';
     });
   </script>
+
 </body>
 </html>
