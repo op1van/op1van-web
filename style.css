@@ -392,10 +392,18 @@ nav a:hover,
     gap: 16px;
     border: none;
     border-radius: 0;
+    pointer-events: none; /* отключаем фоновые события */
   }
 
-  body.banner-visible .menu,
-  body.banner-visible .footer {
-    display: none !important;
+  .cookie-banner * {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto; /* включаем кликабельность только текста и кнопок */
+  }
+
+  .menu, .footer {
+    z-index: 1 !important;
+    position: relative !important;
   }
 }
+
