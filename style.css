@@ -371,17 +371,7 @@ nav a#player-toggle.blurred {
   align-items: center;
   gap: 10px;
   text-align: center;
-  border-radius: 0;         /* убрать все скругления */
-}
-
-.cookie-banner a {
-  color: #0008db;
-  text-decoration: underline;
-  font-weight: bold;
-  transition: filter 0.2s;
-}
-.cookie-banner a:hover {
-  filter: blur(2px);
+  border-radius: 0;
 }
 
 .cookie-banner-btns {
@@ -394,7 +384,7 @@ nav a#player-toggle.blurred {
   background: #0008db;
   color: #fff;
   border: none;
-  border-radius: 0;       /* убрать скругления кнопок */
+  border-radius: 0;
   font-weight: bold;
   padding: 8px 22px;
   cursor: pointer;
@@ -407,14 +397,7 @@ nav a#player-toggle.blurred {
   background: #283ee0;
 }
 
-.cookie-learn {
-  background: #ededed;
-  color: #0008db;
-  border: 1px solid #0008db;
-  border-radius: 0;      /* убрать скругления у второй кнопки */
-}
-
-/* ----- МОБИЛЬНАЯ ВЕРСИЯ ----- */
+/* ---- МОБИЛЬНАЯ ВЕРСИЯ ---- */
 @media (max-width: 768px) {
   .cookie-banner {
     left: 0;
@@ -437,7 +420,7 @@ nav a#player-toggle.blurred {
   }
 }
 
-/* ----- ДЕСКТОПНАЯ ВЕРСИЯ ----- */
+/* ---- ДЕСКТОПНАЯ ВЕРСИЯ ---- */
 @media (min-width: 769px) {
   .cookie-banner {
     right: 32px;
