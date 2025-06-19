@@ -186,12 +186,11 @@
     This website uses cookies and similar technologies (e.g., Google Analytics, YouTube, Spotify) to analyze traffic and display embedded media files. By continuing to browse, you agree to their use. If you do not agree, please close the website. For more information, please read our Privacy Policy.
   </span>
   <div class="cookie-banner-btns">
-    <button id="cookie-accept" class="cookie-btn">Accept</button>
-    <button id="cookie-learn" class="cookie-btn">Learn More</button>
+    <button id="cookie-accept" class="cookie-btn" type="button">Accept</button>
+    <button id="cookie-learn" class="cookie-btn" type="button">Learn More</button>
   </div>
 </div>
-
-  <script>
+<script>
   // Показываем баннер, если еще не закрыт
   if (!localStorage.getItem('cookieBannerAccepted')) {
     document.getElementById('cookie-banner').style.display = 'flex';
@@ -203,7 +202,12 @@
     localStorage.setItem('cookieBannerAccepted', '1');
     document.getElementById('cookie-banner').style.display = 'none';
   };
+
+  document.getElementById('cookie-learn').onclick = function() {
+    window.open('policy.html', '_blank');
+  };
 </script>
+
 
 </body>
 </html>
