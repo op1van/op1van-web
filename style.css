@@ -231,7 +231,7 @@ nav a:hover,
   padding: 16px 20px;
   font-size: 0.9rem;
   font-weight: bold;
-  z-index: 999;
+  z-index: 5; /* 👈 понижено с 999 до 5 */
   display: none;
   flex-direction: column;
   gap: 16px;
@@ -239,8 +239,8 @@ nav a:hover,
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   user-select: none;
   border-radius: 0;
-  pointer-events: none; /* fix: allow clicks to pass through */
 }
+
 
 .cookie-text,
 .cookie-buttons,
