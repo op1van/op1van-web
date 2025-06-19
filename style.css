@@ -329,3 +329,9 @@ nav a#player-toggle.blurred {
     display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  .about-wrapper .about-text {
+    margin-top: 56px; /* 36px высота крестика + 20px — итоговый отступ */
+  }
+}
