@@ -357,3 +357,38 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
   transition: filter 0.2s;
 }
+
+.policy-link {
+  color: blue;
+  text-decoration: none;       /* Без подчеркивания */
+  font-weight: bold;
+  font-size: inherit;
+  margin-left: 4px;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.footer-text {
+  display: inline-block;
+  cursor: url('cursor.svg') 4 4, default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  transition: filter 0.2s;
+}
+
+.footer-text:hover {
+  filter: blur(2px);
+}
+
+.policy-link:hover {
+  filter: blur(2px);
+}
+
+/* Чтобы не блюрился весь блок при наведении на ссылку */
+.footer-text:hover .policy-link {
+  filter: none;
+}
+.policy-link:hover {
+  filter: blur(2px) !important;
+}
