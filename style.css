@@ -21,6 +21,12 @@ html, body {
   cursor: url('cursor.svg') 4 4, auto;
 }
 
+:root {
+  --menu-bottom: 180px;
+  --footer-height: 60px;
+}
+
+/* ---- BACKGROUND ---- */
 .background-image {
   position: fixed;
   top: 0;
@@ -34,6 +40,7 @@ html, body {
   z-index: -1;
 }
 
+/* ---- CONTENT & MENU ---- */
 .content {
   position: relative;
   z-index: 10;
@@ -90,6 +97,7 @@ nav a#player-toggle.blurred {
   filter: blur(2px);
 }
 
+/* ---- ABOUT/PLAYER POPUPS ---- */
 .about-wrapper,
 .player-wrapper {
   display: none;
@@ -102,7 +110,7 @@ nav a#player-toggle.blurred {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 0;
   background: none;
 }
 
@@ -111,18 +119,26 @@ nav a#player-toggle.blurred {
   display: flex;
 }
 
-.about-text {
+/* КЛЮЧЕВОЕ: Центрирование между меню и футером */
+.about-wrapper .about-text {
+  position: absolute;
+  top: var(--menu-bottom);
+  bottom: var(--footer-height);
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
   max-width: 830px;
   color: blue;
   font-weight: 900;
-  font-size: 1.15rem;
+  font-size: 1.15rem; /* уменьшенный шрифт */
   line-height: 135%;
   text-transform: uppercase;
   cursor: url('cursor.svg') 4 4, auto;
-  display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
 }
 
 .about-text:hover {
@@ -130,6 +146,7 @@ justify-content: center;
   transition: filter 0.2s ease;
 }
 
+/* ---- PLAYER ---- */
 .player-text {
   max-width: 600px;
   color: blue;
@@ -194,6 +211,7 @@ justify-content: center;
   filter: blur(2px);
 }
 
+/* ---- FOOTER ---- */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -205,27 +223,39 @@ justify-content: center;
   text-transform: uppercase;
   color: blue;
   z-index: 10;
-  cursor: url('cursor.svg') 4 4, default; /* ← fallback добавлен */
+  cursor: url('cursor.svg') 4 4, default;
   user-select: none;
   pointer-events: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
 }
 
-
-
 .footer:hover {
   filter: blur(2px);
   transition: filter 0.2s ease;
 }
 
+.footer-text {
+  display: inline-block;
+  cursor: url('cursor.svg') 4 4, default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+/* ---- CLOSE BUTTON ---- */
 .close-btn {
   display: none;
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-/* MOBILE */
+/* ---- MOBILE ---- */
 @media (max-width: 768px) {
+  :root {
+    --menu-bottom: 140px;
+    --footer-height: 40px;
+  }
+
   .content {
     height: 100vh;
     display: flex;
@@ -260,9 +290,11 @@ justify-content: center;
     font-size: 1.125rem;
   }
 
-  .about-text {
-    font-size: 2.1vh;
+  .about-wrapper .about-text {
+    font-size: 1.7vh; /* уменьшено с 2.1vh */
     line-height: 1.25;
+    max-width: 98vw;
+    padding: 0 6vw;
   }
 
   .player-text {
@@ -296,47 +328,4 @@ justify-content: center;
   .mobile-hidden {
     display: none !important;
   }
-}
-
-.footer-text {
-  display: inline-block;
-  cursor: url('cursor.svg') 4 4, default;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-}
-
-:root {
-  --menu-bottom: 180px;
-  --footer-height: 60px;
-}
-
-.about-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0;
-  background: none;
-  display: flex;
-}
-
-.about-wrapper .about-text {
-  position: absolute;
-  top: var(--menu-bottom);
-  bottom: var(--footer-height);
-  left: 0;
-  right: 0;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  max-width: 830px;
 }
