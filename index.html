@@ -75,7 +75,7 @@
   <div class="close-btn" id="close-btn">✕</div>
 
   <!-- Cookie banner -->
-  <div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-banner" id="cookie-banner" style="z-index: 0;">
     <div class="cookie-text">
       This website uses cookies and similar technologies (e.g., Google Analytics, YouTube, Spotify)
       to analyze traffic and display embedded media files. By continuing to browse, you agree to
@@ -89,16 +89,81 @@
   </div>
 
   <script>
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('cookie-accept');
+    const aboutToggle = document.getElementById("about-toggle");
+    const aboutWrapper = document.getElementById("about-wrapper");
+    const playerToggle = document.getElementById("player-toggle");
+    const playerWrapper = document.getElementById("player-wrapper");
+    const closeBtn = document.getElementById("close-btn");
+    const content = document.querySelector(".content");
+    const footer = document.querySelector(".footer");
 
-    if (!localStorage.getItem('cookiesDecision')) {
-      banner.style.display = 'flex';
+    function showCloseButton() {
+      if (window.innerWidth <= 768) {
+        closeBtn.style.display = "block";
+        content.classList.add("mobile-hidden");
+        footer.classList.add("mobile-hidden");
+      }
     }
 
-    acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookiesDecision', 'accepted');
-      banner.style.display = 'none';
+    function hideCloseButton() {
+      closeBtn.style.display = "none";
+      content.classList.remove("mobile-hidden");
+      footer.classList.remove("mobile-hidden");
+    }
+
+    document.addEventListener("click", function (e) {
+      const clickedInsideAbout = e.target.closest(".about-text");
+      const clickedInsidePlayer = e.target.closest(".player-text");
+
+      const clickedAbout = e.target === aboutToggle;
+      const clickedPlayer = e.target === playerToggle;
+
+      const aboutOpen = aboutWrapper.classList.contains("visible");
+      const playerOpen = playerWrapper.classList.contains("visible");
+
+      if (!aboutOpen && clickedAbout) {
+        aboutWrapper.classList.add("visible");
+        aboutToggle.classList.add("blurred");
+        playerWrapper.classList.remove("visible");
+        playerToggle.classList.remove("blurred");
+        showCloseButton();
+      } else if (aboutOpen && (!clickedInsideAbout || clickedAbout)) {
+        aboutWrapper.classList.remove("visible");
+        aboutToggle.classList.remove("blurred");
+        hideCloseButton();
+      }
+
+      if (!playerOpen && clickedPlayer) {
+        playerWrapper.classList.add("visible");
+        playerToggle.classList.add("blurred");
+        aboutWrapper.classList.remove("visible");
+        aboutToggle.classList.remove("blurred");
+        showCloseButton();
+      } else if (playerOpen && (!clickedInsidePlayer || clickedPlayer)) {
+        playerWrapper.classList.remove("visible");
+        playerToggle.classList.remove("blurred");
+        hideCloseButton();
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      aboutWrapper.classList.remove("visible");
+      playerWrapper.classList.remove("visible");
+      aboutToggle.classList.remove("blurred");
+      playerToggle.classList.remove("blurred");
+      hideCloseButton();
+    });
+
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("cookie-accept");
+
+    if (!localStorage.getItem("cookiesDecision")) {
+      banner.style.display = "flex";
+    }
+
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookiesDecision", "accepted");
+      banner.style.display = "none";
     });
   </script>
 
