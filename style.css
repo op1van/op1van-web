@@ -479,4 +479,27 @@ nav a#player-toggle.blurred {
   text-align: left;
 }
 
+.about-text {
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+.about-text img {
+  display: block;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.about-text .about-title,
+.about-title {
+  display: block;
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+.about-img {
+  display: block;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
