@@ -344,3 +344,16 @@ nav a#player-toggle.blurred {
     justify-content: flex-start;
   }
 }
+
+.policy-link {
+  color: blue;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: inherit;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.policy-link:hover {
+  filter: blur(2px);
+  transition: filter 0.2s;
+}
