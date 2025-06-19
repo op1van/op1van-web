@@ -190,5 +190,19 @@
     <a href="policy.html" target="_blank" class="cookie-btn cookie-learn">Learn More</a>
   </div>
 </div>
+  <script>
+  // Показываем баннер, если еще не закрыт
+  if (!localStorage.getItem('cookieBannerAccepted')) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  } else {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  document.getElementById('cookie-accept').onclick = function() {
+    localStorage.setItem('cookieBannerAccepted', '1');
+    document.getElementById('cookie-banner').style.display = 'none';
+  };
+</script>
+
 </body>
 </html>
