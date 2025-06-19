@@ -198,7 +198,8 @@ nav a:hover,
 
 .footer-text,
 .footer-blur,
-.footer-link {
+.footer-link,
+.footer-link-wrapper {
   display: inline-block;
   user-select: none;
   cursor: url('cursor.svg') 4 4, auto;
