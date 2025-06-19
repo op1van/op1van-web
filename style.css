@@ -48,6 +48,8 @@ html, body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
@@ -180,7 +182,6 @@ nav a:hover,
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-/* Footer */
 .footer {
   position: fixed;
   bottom: 15px;
@@ -188,7 +189,7 @@ nav a:hover,
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -227,7 +228,7 @@ nav a:hover,
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-/* Cookie Banner */
+/* COOKIE BANNER */
 .cookie-banner {
   position: fixed;
   bottom: 20px;
@@ -238,8 +239,8 @@ nav a:hover,
   padding: 16px 20px;
   font-size: 0.9rem;
   font-weight: bold;
-  border-radius: 8px;
-  z-index: 999;
+  border-radius: 0;
+  z-index: 9999;
   display: none;
   flex-direction: column;
   gap: 12px;
@@ -261,7 +262,7 @@ nav a:hover,
   color: white;
   border: none;
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: 0;
   font-weight: bold;
   cursor: pointer;
   font-size: 0.85rem;
@@ -277,12 +278,12 @@ nav a:hover,
   font-weight: bold;
   color: blue;
   text-decoration: underline;
-  border-radius: 6px;
+  border-radius: 0;
   cursor: pointer;
   align-self: center;
 }
 
-/* Mobile layout adjustments */
+/* MOBILE */
 @media (max-width: 768px) {
   .content {
     height: 100vh;
@@ -330,6 +331,8 @@ nav a:hover,
 
   .footer {
     font-size: 12px;
+    position: relative;
+    z-index: 1;
   }
 
   .cookie-banner {
@@ -344,6 +347,7 @@ nav a:hover,
     flex-direction: column;
     gap: 16px;
     border-radius: 0;
+    border: none;
   }
 
   .cookie-text {
@@ -368,12 +372,5 @@ nav a:hover,
   .cookie-learn {
     margin-left: 0;
     font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  body.cookie-banner-active .menu,
-  body.cookie-banner-active .footer {
-    display: none;
   }
 }
