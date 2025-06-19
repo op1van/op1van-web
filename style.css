@@ -420,3 +420,70 @@ nav a:hover,
     display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* равномерно между логотипом, меню и футером */
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    padding: 0;
+  }
+  .logo-link {
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    display: block;
+    margin: 24px auto 0 auto;
+    width: 50vw;
+    max-width: none;
+  }
+  .menu {
+    position: static; /* убираем absolute */
+    transform: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 auto;
+    justify-content: center;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+  .footer {
+    position: static;
+    margin-bottom: 2.5vh; /* небольшой отступ от нижнего края */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: all;
+    background: none;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    font-size: 10px; /* уменьшено на 2px */
+  }
+  .footer-link {
+    font-size: 10px; /* уменьшено на 2px */
+  }
+  .cookie-banner {
+    display: none !important;
+  }
+}
+
