@@ -263,26 +263,26 @@ nav a#player-toggle.blurred {
 
 /* ---- MOBILE ---- */
 @media (max-width: 768px) {
-  :root {
-    --menu-bottom: 140px;
-    --footer-height: 40px;
-  }
 
 .content {
     min-height: 100vh;
-    position: relative;
     width: 100vw;
+    position: relative;
+    /* Не делай flex и не добавляй justify-content */
   }
 
   .logo {
     width: 50vw;
     max-width: none;
-    margin: 32px auto 0 auto;  /* сверху 32px, по центру */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
   }
 
   .menu {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 0;
     width: 100vw;
@@ -293,6 +293,7 @@ nav a#player-toggle.blurred {
     justify-content: center;
     margin: 0;
     padding: 0;
+    z-index: 50;
   }
   
   nav {
