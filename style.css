@@ -397,3 +397,71 @@ nav a:hover,
     display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+  body {
+    position: relative;
+  }
+  .content {
+    height: 100vh;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo {
+    width: 50vw;
+    max-width: none;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+  .menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+  .footer {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    margin: 0;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+  }
+  .footer-link {
+    font-size: 12px;
+  }
+  .cookie-banner {
+    display: none !important;
+  }
+}
+
