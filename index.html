@@ -180,5 +180,21 @@
 
   </script>
 
+<script>
+  const cookieBanner = document.querySelector('.cookie-banner');
+  const acceptBtn = document.querySelector('.cookie-accept');
+
+  // Показать баннер и скрыть меню/футер
+  cookieBanner.style.display = 'flex';
+  document.body.classList.add('banner-visible');
+
+  acceptBtn.onclick = () => {
+    cookieBanner.style.display = 'none';
+    document.body.classList.remove('banner-visible');
+    localStorage.setItem('cookiesAccepted', 'true');
+  };
+</script>
+
+  
 </body>
 </html>
