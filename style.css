@@ -203,11 +203,11 @@ nav a:hover,
 
 .footer-link {
   color: blue;
-  text-decoration: underline;
   font-weight: bold;
   font-size: inherit;
   font-family: inherit;
   cursor: pointer;
+  text-decoration: none; /* убрано подчёркивание */
 }
 
 .footer-link:hover {
