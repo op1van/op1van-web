@@ -452,3 +452,31 @@ nav a#player-toggle.blurred {
 .cookie-banner span {
   text-align: justify;
 }
+
+@media (min-width: 769px) {
+  .cookie-banner-btns {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .cookie-btn {
+    width: auto;
+    min-width: 95px;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    text-align: left;
+  }
+}
+
+.about-text {
+  /* ...остальной стиль... */
+  text-align: left;
+}
+
+
