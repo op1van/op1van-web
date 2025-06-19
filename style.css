@@ -361,9 +361,6 @@ nav a:hover,
   .footer-link {
     font-size: 10px;
   }
-  .cookie-banner {
-    display: none !important;
-  }
 }
 
 @media (max-width: 768px) {
