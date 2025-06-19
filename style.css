@@ -299,34 +299,36 @@ nav a:hover,
     height: 100vh;
     min-height: 100vh;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
     position: relative;
-    display: block;
-    padding-top: 18vw;    /* чтобы меню не налезло на лого */
-    padding-bottom: 48px; /* чтобы меню не налезло на футер */
   }
   .logo-link {
-    display: block;
     width: 100%;
     text-align: center;
     margin-top: 0;
   }
   .logo {
     display: block;
+    margin-top: 24px;    /* строгий отступ сверху */
+    margin-bottom: 0;
     width: 50vw;
     max-width: none;
-    margin: 20px auto 0 auto;
+    align-self: center;
   }
   .menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 100vw;
-    z-index: 10;
+    flex: 1 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* центрирует меню по вертикали */
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
   }
   nav {
     flex-direction: column;
@@ -362,3 +364,4 @@ nav a:hover,
     display: none !important;
   }
 }
+
