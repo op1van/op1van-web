@@ -237,9 +237,16 @@ nav a:hover,
   gap: 16px;
   max-width: 340px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: default;
   user-select: none;
   border-radius: 0;
+  pointer-events: none; /* fix: allow clicks to pass through */
+}
+
+.cookie-text,
+.cookie-buttons,
+.cookie-accept,
+.cookie-learn {
+  pointer-events: auto;
 }
 
 .cookie-text {
@@ -255,8 +262,7 @@ nav a:hover,
   justify-content: flex-start;
 }
 
-.cookie-accept,
-.cookie-reject {
+.cookie-accept {
   background: blue;
   color: white;
   border: none;
@@ -267,8 +273,7 @@ nav a:hover,
   border-radius: 0;
 }
 
-.cookie-accept:hover,
-.cookie-reject:hover {
+.cookie-accept:hover {
   opacity: 0.9;
 }
 
