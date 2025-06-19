@@ -365,3 +365,14 @@ nav a:hover,
     display: none !important;
   }
 }
+
+.footer-blur,
+.footer-link,
+.cookie-banner,
+.cookie-text,
+.cookie-buttons,
+.cookie-accept,
+.cookie-learn {
+  cursor: url('cursor.svg') 4 4, auto;
+}
+
