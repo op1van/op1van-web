@@ -370,3 +370,10 @@ nav a:hover,
     font-size: 0.9rem;
   }
 }
+
+@media (max-width: 768px) {
+  body.cookie-banner-active .menu,
+  body.cookie-banner-active .footer {
+    display: none;
+  }
+}
