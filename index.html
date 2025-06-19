@@ -65,25 +65,19 @@
     </div>
   </div>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-blur">ALL RIGHTS RESERVED © 2025</div>
-    <div class="footer-link-wrapper">
-      <a href="policy.html" class="footer-link">PRIVACY & COOKIE POLICY</a>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-blur">ALL RIGHTS RESERVED © 2025</div>
+      <div class="footer-link-wrapper">
+        <a href="policy.html" class="footer-link">PRIVACY & COOKIE POLICY</a>
+      </div>
     </div>
-  </div>
-</footer>
-
-
-
-
-
-
+  </footer>
 
   <div class="close-btn" id="close-btn">✕</div>
 
   <!-- Cookie banner -->
-  <div class="cookie-banner" id="cookie-banner" style="z-index: 0;">
+  <div class="cookie-banner" id="cookie-banner" style="display:none;">
     <div class="cookie-text">
       This website uses cookies and similar technologies (e.g., Google Analytics, YouTube, Spotify)
       to analyze traffic and display embedded media files. By continuing to browse, you agree to
@@ -97,6 +91,7 @@
   </div>
 
   <script>
+    // Кнопки About/Player, закрытие и отображение контента
     const aboutToggle = document.getElementById("about-toggle");
     const aboutWrapper = document.getElementById("about-wrapper");
     const playerToggle = document.getElementById("player-toggle");
@@ -161,40 +156,24 @@
       playerToggle.classList.remove("blurred");
       hideCloseButton();
     });
+  </script>
 
+  <!-- Куки-баннер и скрытие меню/футера -->
+  <script>
     const banner = document.getElementById("cookie-banner");
     const acceptBtn = document.getElementById("cookie-accept");
 
     if (!localStorage.getItem("cookiesDecision")) {
       banner.style.display = "flex";
+      document.body.classList.add('banner-active');
     }
 
     acceptBtn.addEventListener("click", () => {
       localStorage.setItem("cookiesDecision", "accepted");
       banner.style.display = "none";
+      document.body.classList.remove('banner-active');
     });
-
-    document.body.classList.add('cookie-banner-active');
-
-    document.body.classList.remove('cookie-banner-active');
-
   </script>
 
-<script>
-  const cookieBanner = document.querySelector('.cookie-banner');
-  const acceptBtn = document.querySelector('.cookie-accept');
-
-  // Показать баннер и скрыть меню/футер
-  cookieBanner.style.display = 'flex';
-  document.body.classList.add('banner-visible');
-
-  acceptBtn.onclick = () => {
-    cookieBanner.style.display = 'none';
-    document.body.classList.remove('banner-visible');
-    localStorage.setItem('cookiesAccepted', 'true');
-  };
-</script>
-
-  
 </body>
 </html>
