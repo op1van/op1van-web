@@ -201,18 +201,31 @@ nav a:hover,
   font-weight: bold;
 }
 
+.footer-blur {
+  color: blue;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: filter 0.2s ease;
+}
+
+.footer-blur:hover {
+  filter: blur(2px);
+}
+
 .footer-link {
   color: blue;
   font-weight: bold;
   font-size: inherit;
   font-family: inherit;
   cursor: pointer;
-  text-decoration: none; /* убрано подчёркивание */
+  text-decoration: none;
+  display: inline-block;
+  transition: filter 0.2s ease;
 }
 
 .footer-link:hover {
   filter: blur(2px);
-  transition: filter 0.2s ease;
 }
 
 .close-btn {
@@ -231,7 +244,7 @@ nav a:hover,
   padding: 16px 20px;
   font-size: 0.9rem;
   font-weight: bold;
-  z-index: 5; /* 👈 понижено с 999 до 5 */
+  z-index: 0;
   display: none;
   flex-direction: column;
   gap: 16px;
@@ -241,14 +254,6 @@ nav a:hover,
   border-radius: 0;
 }
 
-
-.cookie-text,
-.cookie-buttons,
-.cookie-accept,
-.cookie-learn {
-  pointer-events: auto;
-}
-
 .cookie-text {
   margin: 0;
   line-height: 1.4;
@@ -256,10 +261,9 @@ nav a:hover,
 
 .cookie-buttons {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-start;
+  width: 100%;
 }
 
 .cookie-accept {
@@ -278,13 +282,14 @@ nav a:hover,
 }
 
 .cookie-learn {
-  padding: 10px 0;
   font-size: 0.85rem;
   font-weight: bold;
   color: blue;
-  text-decoration: underline;
   border-radius: 0;
   cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  text-decoration: none;
 }
 
 /* MOBILE */
