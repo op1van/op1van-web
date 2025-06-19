@@ -119,7 +119,7 @@ nav a#player-toggle.blurred {
   display: flex;
 }
 
-/* КЛЮЧЕВОЕ: Центрирование между меню и футером */
+/* Центрирование между меню и футером на десктопе */
 .about-wrapper .about-text {
   position: absolute;
   top: var(--menu-bottom);
@@ -226,21 +226,33 @@ nav a#player-toggle.blurred {
   cursor: url('cursor.svg') 4 4, default;
   user-select: none;
   pointer-events: auto;
-  -webkit-user-select: none;
-  -moz-user-select: none;
+  background: transparent;
+  border: none;
 }
 
-.footer:hover {
-  filter: blur(2px);
-  transition: filter 0.2s ease;
-}
-
-.footer-text {
+.footer-main,
+.footer-policy {
+  transition: filter 0.2s;
   display: inline-block;
-  cursor: url('cursor.svg') 4 4, default;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
+  vertical-align: middle;
+}
+
+.footer-main:hover {
+  filter: blur(2px);
+}
+
+.footer-policy {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: inherit;
+  margin-left: 4px;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.footer-policy:hover {
+  filter: blur(2px);
 }
 
 /* ---- CLOSE BUTTON ---- */
@@ -290,11 +302,21 @@ nav a#player-toggle.blurred {
     font-size: 1.125rem;
   }
 
+  /* Отключаем абсолютное позиционирование about-text на мобиле,
+     чтобы можно было задать отступ от крестика */
   .about-wrapper .about-text {
-    font-size: 1.7vh; /* уменьшено с 2.1vh */
-    line-height: 1.25;
+    position: static !important;
+    margin-top: 56px !important; /* 36px высота крестика + 20px */
+    margin-bottom: 0;
+    transform: none;
     max-width: 98vw;
     padding: 0 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.7vh;
+    line-height: 1.25;
   }
 
   .player-text {
@@ -328,114 +350,4 @@ nav a#player-toggle.blurred {
   .mobile-hidden {
     display: none !important;
   }
-}
-
-@media (max-width: 768px) {
-  .about-wrapper .about-text {
-    position: static !important; /* Отключаем absolute для мобилы */
-    margin-top: -10px !important; /* или другое нужное тебе число */
-    margin-bottom: 0;
-    transform: none;
-    max-width: 98vw;
-    padding: 0 6vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-}
-
-.policy-link {
-  color: blue;
-  text-decoration: underline;
-  font-weight: bold;
-  font-size: inherit;
-  margin-left: 4px;
-  cursor: pointer;
-}
-.policy-link:hover {
-  filter: blur(2px);
-  transition: filter 0.2s;
-}
-
-.policy-link {
-  color: blue;
-  text-decoration: none;       /* Без подчеркивания */
-  font-weight: bold;
-  font-size: inherit;
-  margin-left: 4px;
-  cursor: pointer;
-  transition: filter 0.2s;
-}
-
-.footer-text {
-  display: inline-block;
-  cursor: url('cursor.svg') 4 4, default;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  transition: filter 0.2s;
-}
-
-.footer-text:hover {
-  filter: blur(2px);
-}
-
-.policy-link:hover {
-  filter: blur(2px);
-}
-
-/* Чтобы не блюрился весь блок при наведении на ссылку */
-.footer-text:hover .policy-link {
-  filter: none;
-}
-.policy-link:hover {
-  filter: blur(2px) !important;
-}
-
-.footer-text {
-  display: inline-block;
-  cursor: url('cursor.svg') 4 4, default;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  transition: filter 0.2s;
-}
-
-.policy-link {
-  color: blue;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: inherit;
-  margin-left: 4px;
-  cursor: pointer;
-  transition: filter 0.2s;
-}
-
-/* Блюр только текста, если НЕ ховер на ссылке */
-.footer-text:hover,
-.footer-text:focus {
-  filter: blur(2px);
-}
-
-.footer-text:hover .policy-link,
-.footer-text:focus .policy-link {
-  filter: none;
-}
-
-/* Блюр только ссылки при наведении на неё */
-.policy-link:hover,
-.policy-link:focus {
-  filter: blur(2px);
-}
-
-/* Если курсор на ссылке, основной текст не блюрится */
-.policy-link:hover ~ .footer-text,
-.policy-link:focus ~ .footer-text {
-  filter: none !important;
-}
-
-/* Бонус: pointer-events для верности, чтобы ссылка перехватывала ховер */
-.footer-text .policy-link {
-  pointer-events: auto;
 }
