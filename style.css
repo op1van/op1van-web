@@ -198,8 +198,8 @@ nav a:hover,
 
 .footer-text,
 .footer-blur,
-.footer-link,
-.footer-link-wrapper {
+.footer-link-wrapper,
+.footer-link {
   display: inline-block;
   user-select: none;
   cursor: url('cursor.svg') 4 4, auto;
@@ -218,8 +218,6 @@ nav a:hover,
 .footer-link {
   color: blue;
   font-weight: bold;
-  font-size: inherit;
-  font-family: inherit;
   text-decoration: none;
   transition: filter 0.2s ease;
 }
