@@ -11,13 +11,14 @@
       max-width: 700px;
       margin: 80px auto 40px auto;
       padding: 32px 20px;
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
+      /* БЕЗ background */
       color: blue;
       font-family: 'CustomFont', Arial, sans-serif;
       font-size: 1.1rem;
-      box-shadow: 0 6px 24px 0 rgba(0,0,0,0.05);
+      box-shadow: none;
       line-height: 1.55;
+      border-radius: 0;
+      background: none;
     }
     .privacy-container h1 {
       font-size: 1.6rem;
@@ -58,6 +59,7 @@
   </style>
 </head>
 <body>
+  <div class="background-image"></div>
   <div class="privacy-container">
     <a href="index.html" class="back-link">&larr; Back to main</a>
     <h1>Privacy Policy</h1>
@@ -70,7 +72,7 @@
       These services may use cookies and similar technologies to process technical data such as your IP address, browser information, and usage behavior. This data may be transferred outside your country, including to the United States.<br><br>
       By using this website, you acknowledge that such services may process limited technical data under their own privacy policies.<br>
       You can manage your preferences via the cookie banner when visiting the site.<br><br>
-      If you have any questions, please contact: <a href="mailto:contact.op1van@gmail.com">contact.op1van@gmail.com</a>
+      If you have any questions, please contact: contact.op1van@gmail.com
     </p>
 
     <h2>Cookie Policy</h2>
