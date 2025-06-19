@@ -479,4 +479,25 @@ nav a#player-toggle.blurred {
   text-align: left;
 }
 
+.about-text {
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+.about-text img {
+  display: block !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.about-text br + img {
+  /* если нужно уменьшить отступ сверху картинки, можешь добавить margin-top: 0 !important; */
+}
+
+.about-text strong,
+.about-text b {
+  text-align: left !important;
+  display: block;
+  margin-left: 0 !important;
+}
 
