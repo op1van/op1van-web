@@ -332,6 +332,15 @@ nav a#player-toggle.blurred {
 
 @media (max-width: 768px) {
   .about-wrapper .about-text {
-    margin-top: 56px; /* 36px высота крестика + 20px — итоговый отступ */
+    position: static !important; /* Отключаем absolute для мобилы */
+    margin-top: 56px !important; /* или другое нужное тебе число */
+    margin-bottom: 0;
+    transform: none;
+    max-width: 98vw;
+    padding: 0 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
