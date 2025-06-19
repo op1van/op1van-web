@@ -84,7 +84,6 @@
     </div>
     <div class="cookie-buttons">
       <button class="cookie-accept" id="cookie-accept">Accept</button>
-      <button class="cookie-reject" id="cookie-reject">Reject</button>
       <a class="cookie-learn" href="policy.html" target="_blank">Learn more</a>
     </div>
   </div>
@@ -92,7 +91,6 @@
   <script>
     const banner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('cookie-accept');
-    const rejectBtn = document.getElementById('cookie-reject');
 
     if (!localStorage.getItem('cookiesDecision')) {
       banner.style.display = 'flex';
@@ -100,11 +98,6 @@
 
     acceptBtn.addEventListener('click', () => {
       localStorage.setItem('cookiesDecision', 'accepted');
-      banner.style.display = 'none';
-    });
-
-    rejectBtn.addEventListener('click', () => {
-      localStorage.setItem('cookiesDecision', 'rejected');
       banner.style.display = 'none';
     });
   </script>
