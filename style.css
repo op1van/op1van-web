@@ -350,3 +350,73 @@ nav a:hover,
     display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .content {
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+  }
+  .logo-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    display: block;
+    margin: 24px auto 0 auto;
+    width: 50vw;
+    max-width: none;
+  }
+  .menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 2.5%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    margin: 0;
+    pointer-events: all;
+    background: none;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+  }
+  .footer-link {
+    font-size: 12px;
+  }
+  .cookie-banner {
+    display: none !important;
+  }
+}
