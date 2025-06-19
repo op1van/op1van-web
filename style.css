@@ -407,3 +407,14 @@ nav a:hover,
   }
 }
 
+/* mobile-hidden класс для скрытия меню и футера на мобилках */
+.mobile-hidden {
+  display: none !important;
+}
+
+/* About и Player баннеры — поверх всего */
+.about-wrapper,
+.player-wrapper {
+  z-index: 100;
+}
+
