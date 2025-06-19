@@ -312,22 +312,28 @@ nav a#player-toggle.blurred {
   padding: 16px 20px;
   font-size: 0.9rem;
   font-weight: bold;
-  border-radius: 8px;
   z-index: 999;
   display: none;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   max-width: 320px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: default;
   user-select: none;
+  border-radius: 0; /* Убираем скругления */
+}
+
+.cookie-text {
+  margin: 0;
+  line-height: 1.4;
 }
 
 .cookie-buttons {
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start; /* Выравнивание по левому краю */
 }
 
 .cookie-accept,
@@ -335,11 +341,11 @@ nav a#player-toggle.blurred {
   background: blue;
   color: white;
   border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 10px 16px;
   font-weight: bold;
   cursor: pointer;
   font-size: 0.85rem;
+  border-radius: 0; /* убираем скругления */
 }
 
 .cookie-accept:hover,
@@ -348,12 +354,11 @@ nav a#player-toggle.blurred {
 }
 
 .cookie-learn {
-  padding: 8px 12px;
+  padding: 10px 0;
   font-size: 0.85rem;
   font-weight: bold;
   color: blue;
   text-decoration: underline;
-  border-radius: 6px;
+  border-radius: 0;
   cursor: pointer;
-  align-self: center;
 }
