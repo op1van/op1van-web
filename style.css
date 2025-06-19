@@ -333,7 +333,7 @@ nav a#player-toggle.blurred {
 @media (max-width: 768px) {
   .about-wrapper .about-text {
     position: static !important; /* Отключаем absolute для мобилы */
-    margin-top: 56px !important; /* или другое нужное тебе число */
+    margin-top: 24px !important; /* или другое нужное тебе число */
     margin-bottom: 0;
     transform: none;
     max-width: 98vw;
