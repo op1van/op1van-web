@@ -85,11 +85,6 @@ nav a:hover,
   transition: filter 0.2s ease;
 }
 
-nav a#about-toggle.blurred,
-nav a#player-toggle.blurred {
-  filter: blur(2px);
-}
-
 .about-wrapper,
 .player-wrapper {
   display: none;
@@ -186,10 +181,6 @@ nav a#player-toggle.blurred {
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-.track.blurred {
-  filter: blur(2px);
-}
-
 .footer {
   position: fixed;
   bottom: 15px;
@@ -201,16 +192,25 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
   color: blue;
   z-index: 10;
-  cursor: url('cursor.svg') 4 4, default; /* ← fallback добавлен */
   user-select: none;
-  pointer-events: auto;
-  -webkit-user-select: none;
-  -moz-user-select: none;
+  cursor: url('cursor.svg') 4 4, auto;
 }
 
+.footer-text {
+  font-size: inherit;
+  font-weight: bold;
+}
 
+.footer-link {
+  color: blue;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
 
-.footer:hover {
+.footer-link:hover {
   filter: blur(2px);
   transition: filter 0.2s ease;
 }
@@ -218,6 +218,68 @@ nav a#player-toggle.blurred {
 .close-btn {
   display: none;
   cursor: url('cursor.svg') 4 4, auto;
+}
+
+/* COOKIE BANNER */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid blue;
+  color: blue;
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 340px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  user-select: none;
+  border-radius: 0;
+}
+
+.cookie-text {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cookie-accept,
+.cookie-reject {
+  background: blue;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border-radius: 0;
+}
+
+.cookie-accept:hover,
+.cookie-reject:hover {
+  opacity: 0.9;
+}
+
+.cookie-learn {
+  padding: 10px 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
+  border-radius: 0;
+  cursor: pointer;
 }
 
 /* MOBILE */
@@ -292,73 +354,4 @@ nav a#player-toggle.blurred {
   .mobile-hidden {
     display: none !important;
   }
-}
-
-.footer-text {
-  display: inline-block;
-  cursor: url('cursor.svg') 4 4, default;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-}
-
-.cookie-banner {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid blue;
-  color: blue;
-  padding: 16px 20px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  z-index: 999;
-  display: none;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 320px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: default;
-  user-select: none;
-  border-radius: 0; /* Убираем скругления */
-}
-
-.cookie-text {
-  margin: 0;
-  line-height: 1.4;
-}
-
-.cookie-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start; /* Выравнивание по левому краю */
-}
-
-.cookie-accept,
-.cookie-reject {
-  background: blue;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 0.85rem;
-  border-radius: 0; /* убираем скругления */
-}
-
-.cookie-accept:hover,
-.cookie-reject:hover {
-  opacity: 0.9;
-}
-
-.cookie-learn {
-  padding: 10px 0;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: blue;
-  text-decoration: underline;
-  border-radius: 0;
-  cursor: pointer;
 }
