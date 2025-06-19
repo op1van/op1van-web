@@ -205,15 +205,12 @@ nav a:hover,
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-.footer-blur {
-  color: blue;
-  font-weight: bold;
+.footer-blur:hover,
+.footer-link:hover {
+  filter: blur(2px);
   transition: filter 0.2s ease;
 }
 
-.footer-blur:hover {
-  filter: blur(2px);
-}
 
 .footer-link {
   color: blue;
