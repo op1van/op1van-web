@@ -501,3 +501,12 @@ nav a#player-toggle.blurred {
   margin-left: 0 !important;
 }
 
+.about-text {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+.about-text img {
+  display: block !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
