@@ -181,46 +181,46 @@ nav a:hover,
   cursor: url('cursor.svg') 4 4, auto;
 }
 
+/* ✅ Футер с решением проблемы курсора */
 .footer {
   position: fixed;
   bottom: 15px;
   left: 0;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.footer-inner {
+  display: flex;
+  gap: 12px;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   color: blue;
-  z-index: 10;
   user-select: none;
+  pointer-events: all;
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-.footer-text,
 .footer-blur,
 .footer-link-wrapper,
 .footer-link {
-  display: inline-block;
   user-select: none;
   cursor: url('cursor.svg') 4 4, auto;
+  transition: filter 0.2s ease;
 }
 
 .footer-blur:hover,
 .footer-link:hover {
   filter: blur(2px);
-  transition: filter 0.2s ease;
 }
-
 
 .footer-link {
-  color: blue;
-  font-weight: bold;
   text-decoration: none;
-  transition: filter 0.2s ease;
-}
-
-.footer-link:hover {
-  filter: blur(2px);
+  color: blue;
 }
 
 .close-btn {
@@ -228,7 +228,7 @@ nav a:hover,
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-/* COOKIE BANNER */
+/* ✅ Cookie баннер */
 .cookie-banner {
   position: fixed;
   bottom: 20px;
@@ -293,7 +293,7 @@ nav a:hover,
   text-decoration: none;
 }
 
-/* MOBILE */
+/* Mobile */
 @media (max-width: 768px) {
   .content {
     height: 100vh;
