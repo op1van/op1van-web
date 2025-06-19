@@ -268,34 +268,33 @@ nav a#player-toggle.blurred {
     --footer-height: 40px;
   }
 
- .content {
+.content {
     min-height: 100vh;
-    display: block; /* Не используем flex здесь! */
-    padding-top: 20px;
-    padding-bottom: 20px;
+    position: relative;
+    width: 100vw;
   }
 
   .logo {
     width: 50vw;
     max-width: none;
-    margin-bottom: 20px;
+    margin: 32px auto 0 auto;  /* сверху 32px, по центру */
     display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .menu {
     position: absolute;
     top: 50%;
     left: 0;
-    width: 100%;
+    width: 100vw;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
+    padding: 0;
   }
+  
   nav {
     flex-direction: column;
     align-items: center;
