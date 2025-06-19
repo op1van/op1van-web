@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>op1van</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+
+  <div class="background-image"></div>
+
+  <div class="content">
+    <a href="index.html" class="logo-link">
+      <img src="logo.svg" alt="Logo" class="logo" />
+    </a>
+
+    <div class="menu">
+      <nav>
+        <a href="https://op1van.bandcamp.com/" target="_blank">BANDCAMP</a>
+        <a href="https://www.instagram.com/op1van/" target="_blank">INSTAGRAM</a>
+        <a href="https://www.tiktok.com/@op1van" target="_blank">TIK TOK</a>
+        <a href="#" id="player-toggle">PLAYER</a>
+        <a href="#" id="about-toggle">ABOUT</a>
+        <a href="mailto:contact.op1van@gmail.com">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="about-wrapper" id="about-wrapper">
+    <div class="about-text">
+      <p>
+        THE OP-1 – MACHINE ITSELF – HAS AN INTERESTING FEATURE – SAMPLING RADIO STATIONS.
+        I TRAVEL A LOT. AND IN DIFFERENT CITIES, RADIO WAVES CARRY THE LOCAL FLAVOUR.
+        THAT’S WHY MY MUSIC STARTS WITH RECORDED BITS OF SONGS FROM VARIOUS CITIES AND COUNTRIES,
+        WHICH I LATER REASSEMBLE LIKE A PUZZLE ON THE OP-1.<br><br>
+        THE TRACKS TITLES WILL HINT AT THEIR ORIGINS.
+        SOME PARTS WERE LATER REWORKED IN THE STUDIO, AND PARTIALLY VOCALS WERE ADDED.
+        IT IS A UNIQUE EXPERIENCE OF RECORDING A MOMENT, AN OCCURRENCE THAT CANNOT BE PREDICTED.
+        IT’S RADIO, AFTER ALL – YOU CAN’T REWIND IT. LITERALLY, IT’S LIKE A HUNT FOR THE RIGHT PIECE OF MUSIC.
+      </p>
+    </div>
+  </div>
+
+  <div class="player-wrapper" id="player-wrapper">
+    <div class="player-text">
+      <div class="album-title">
+        <div>EP 2025</div>
+        <div>I sampled the radio 2</div>
+      </div>
+
+      <div class="track" data-audio="paris.mp3">
+        <img src="play.svg" class="play-btn" alt="Play" />
+        <span>PARIS 03:20</span>
+      </div>
+      <div class="track" data-audio="toshkent.mp3">
+        <img src="play.svg" class="play-btn" alt="Play" />
+        <span>TOSHKENT 03:15</span>
+      </div>
+      <div class="track" data-audio="hydraisland.mp3">
+        <img src="play.svg" class="play-btn" alt="Play" />
+        <span>HYDRA ISLAND 02:07</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer"><span class="footer-text">ALL RIGHTS RESERVED © 2025</span></footer>
+  <div class="close-btn" id="close-btn">✕</div>
+
+  <script>
+    const aboutToggle = document.getElementById("about-toggle");
+    const aboutWrapper = document.getElementById("about-wrapper");
+    const playerToggle = document.getElementById("player-toggle");
+    const playerWrapper = document.getElementById("player-wrapper");
+    const closeBtn = document.getElementById("close-btn");
+    const content = document.querySelector(".content");
+    const footer = document.querySelector(".footer");
+
+    function showCloseButton() {
+      if (window.innerWidth <= 768) {
+        closeBtn.style.display = "block";
+        content.classList.add("mobile-hidden");
+        footer.classList.add("mobile-hidden");
+      }
+    }
+
+    function hideCloseButton() {
+      closeBtn.style.display = "none";
+      content.classList.remove("mobile-hidden");
+      footer.classList.remove("mobile-hidden");
+    }
+
+    document.addEventListener("click", function (e) {
+      const clickedInsideAbout = e.target.closest(".about-text");
+      const clickedInsidePlayer = e.target.closest(".player-text");
+
+      const clickedAbout = e.target === aboutToggle;
+      const clickedPlayer = e.target === playerToggle;
+
+      const aboutOpen = aboutWrapper.classList.contains("visible");
+      const playerOpen = playerWrapper.classList.contains("visible");
+
+      if (!aboutOpen && clickedAbout) {
+        aboutWrapper.classList.add("visible");
+        aboutToggle.classList.add("blurred");
+        playerWrapper.classList.remove("visible");
+        playerToggle.classList.remove("blurred");
+        showCloseButton();
+      } else if (aboutOpen && (!clickedInsideAbout || clickedAbout)) {
+        aboutWrapper.classList.remove("visible");
+        aboutToggle.classList.remove("blurred");
+        hideCloseButton();
+      }
+
+      if (!playerOpen && clickedPlayer) {
+        playerWrapper.classList.add("visible");
+        playerToggle.classList.add("blurred");
+        aboutWrapper.classList.remove("visible");
+        aboutToggle.classList.remove("blurred");
+        showCloseButton();
+      } else if (playerOpen && (!clickedInsidePlayer || clickedPlayer)) {
+        playerWrapper.classList.remove("visible");
+        playerToggle.classList.remove("blurred");
+        hideCloseButton();
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      aboutWrapper.classList.remove("visible");
+      playerWrapper.classList.remove("visible");
+      aboutToggle.classList.remove("blurred");
+      playerToggle.classList.remove("blurred");
+      hideCloseButton();
+    });
+
+    let currentAudio = null;
+    let currentBtn = null;
+    let currentTrack = null;
+
+    document.querySelectorAll('.track').forEach(track => {
+      const btn = track.querySelector('.play-btn');
+      const audioSrc = track.dataset.audio;
+      const audio = new Audio(audioSrc);
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          if (currentBtn) currentBtn.src = 'play.svg';
+          if (currentTrack) currentTrack.classList.remove('blurred');
+        }
+
+        if (audio.paused) {
+          audio.play();
+          btn.src = 'pause.svg';
+          currentAudio = audio;
+          currentBtn = btn;
+          currentTrack = track;
+          track.classList.add('blurred');
+        } else {
+          audio.pause();
+          btn.src = 'play.svg';
+          track.classList.remove('blurred');
+          currentAudio = null;
+          currentBtn = null;
+          currentTrack = null;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
