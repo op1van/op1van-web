@@ -269,28 +269,30 @@ nav a#player-toggle.blurred {
   }
 
   .content {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
-
   .menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-
   .logo {
     width: 50vw;
     max-width: none;
     margin-bottom: 20px;
   }
-
   nav {
     flex-direction: column;
     align-items: center;
