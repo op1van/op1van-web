@@ -306,7 +306,7 @@ nav a#player-toggle.blurred {
      чтобы можно было задать отступ от крестика */
   .about-wrapper .about-text {
     position: static !important;
-    margin-top: 56px !important; /* 36px высота крестика + 20px */
+    margin-top: -10px !important; /* 36px высота крестика + 20px */
     margin-bottom: 0;
     transform: none;
     max-width: 98vw;
