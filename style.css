@@ -95,7 +95,7 @@ nav a:hover,
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 100;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -335,86 +335,13 @@ nav a:hover,
     z-index: 1;
   }
 
+  /* Оставляем только это для cookie-banner на мобильных! */
   .cookie-banner {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    max-width: none;
-    padding: 24px 20px;
-    background: rgba(255, 255, 255, 0.98);
-    z-index: 9999;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
-    flex-direction: column;
-    gap: 16px;
-    border-radius: 0;
-    border: none;
-  }
-
-  .cookie-text {
-    font-size: 1rem;
-    text-align: left;
-    line-height: 1.4;
-  }
-
-  .cookie-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .cookie-accept {
-    width: auto;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .cookie-learn {
-    margin-left: 0;
-    font-size: 0.9rem;
+    display: none !important;
   }
 }
 
-@media (max-width: 768px) {
-  .cookie-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: white;
-    z-index: 9999;
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 16px;
-    border: none;
-    border-radius: 0;
-    pointer-events: none; /* отключаем фоновые события */
-  }
-
-  .cookie-banner * {
-    position: relative;
-    z-index: 1;
-    pointer-events: auto; /* включаем кликабельность только текста и кнопок */
-  }
-
-  .menu, .footer {
-    z-index: 1 !important;
-    position: relative !important;
-  }
-}
-
-/* mobile-hidden класс для скрытия меню и футера на мобилках */
+/* Класс для скрытия меню и футера на мобилке при показе баннера или баннер-оверлея (если понадобится) */
 .mobile-hidden {
   display: none !important;
 }
-
-/* About и Player баннеры — поверх всего */
-.about-wrapper,
-.player-wrapper {
-  z-index: 100;
-}
-
