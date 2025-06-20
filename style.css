@@ -293,36 +293,38 @@ nav a#player-toggle.blurred {
   }
 
   /* Меню: вертикальное, меньший шрифт, gap в 2 раза меньше */
+ @media (max-width: 768px) {
   .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Меню по центру */
-    align-items: center;
     z-index: 50;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ← меню ровно по центру */
+    align-items: center;
     pointer-events: auto;
   }
-
   nav {
     flex-direction: column !important;
     align-items: center !important;
     gap: 8px !important;
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-
   nav a {
     display: block !important;
-    margin: 0 !important;
     font-size: 1rem !important;
     text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
+}
+
 
   .about-wrapper .about-text {
     position: static !important;
