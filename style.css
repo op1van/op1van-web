@@ -114,26 +114,38 @@ nav a#player-toggle.blurred {
 }
 
 /* Центрирование about на десктопе */
-.about-wrapper .about-text {
-  position: absolute;
-  top: 50px;
-  bottom: var(--footer-height);
-  left: 0;
-  right: 0;
-  margin: auto;
+.about-wrapper {
   display: flex;
-  flex-direction: column;
-  height: auto;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: none;
+  padding: 0;
+  /* text-align и прочее по желанию */
+}
+
+.about-wrapper .about-text {
+  position: static;      /* убираем absolute и top/bottom/left/right */
+  margin: 0;
   max-width: 830px;
+  width: 100%;
   color: blue;
   font-weight: 900;
   font-size: 1.15rem;
   line-height: 135%;
   text-transform: uppercase;
   cursor: url('cursor.svg') 4 4, auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center !important;
 }
+
 
 .about-text:hover {
   filter: blur(2px);
@@ -499,4 +511,14 @@ nav a#player-toggle.blurred {
     min-width: 95px;
     padding: 8px 18px;
   }
+}
+
+.cookie-btn {
+  cursor: url('cursor.svg') 4 4, pointer !important;
+}
+
+.cookie-banner button,
+.cookie-banner .cookie-btn,
+.cookie-banner a {
+  cursor: url('cursor.svg') 4 4, pointer !important;
 }
