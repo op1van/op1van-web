@@ -119,7 +119,7 @@ nav a#player-toggle.blurred {
   display: flex;
 }
 
-/* Центрирование между меню и футером на десктопе */
+/* Центрирование about на десктопе */
 .about-wrapper .about-text {
   position: absolute;
   top: var(--menu-bottom);
@@ -218,24 +218,16 @@ nav a#player-toggle.blurred {
   bottom: 15px;
   left: 0;
   width: 100%;
-  z-index: 10;
-  background: transparent;
-  border: none;
-  pointer-events: none;
-}
-
-.footer-inner {
-  width: 100%;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   color: blue;
-  user-select: none;
-  pointer-events: auto;
+  z-index: 10;
   cursor: url('cursor.svg') 4 4, default;
-  display: inline-block;
+  user-select: none;
   background: transparent;
+  border: none;
 }
 
 .footer-main,
@@ -245,8 +237,7 @@ nav a#player-toggle.blurred {
   vertical-align: middle;
 }
 
-.footer-main:hover,
-.footer-policy:hover {
+.footer-main:hover {
   filter: blur(2px);
 }
 
@@ -258,6 +249,10 @@ nav a#player-toggle.blurred {
   margin-left: 4px;
   cursor: url('cursor.svg') 4 4, pointer;
   transition: filter 0.2s;
+}
+
+.footer-policy:hover {
+  filter: blur(2px);
 }
 
 /* ---- CLOSE BUTTON ---- */
@@ -334,7 +329,7 @@ nav a#player-toggle.blurred {
     text-align: center !important;
   }
 
-  .footer-inner {
+  .footer {
     font-size: 12px;
   }
 
