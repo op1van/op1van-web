@@ -429,8 +429,8 @@ nav a#player-toggle.blurred {
 
 @media (min-width: 769px) {
   .cookie-banner {
-    right: 32px;
-    bottom: 32px;
+    right: 0px;
+    bottom: 0px;
     left: auto;
     width: auto;
     max-width: 370px;
