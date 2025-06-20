@@ -226,9 +226,10 @@ nav a#player-toggle.blurred {
   z-index: 10;
   cursor: url('cursor.svg') 4 4, default;
   user-select: none;
-  background: transparent;
+  background: rgba(0,0,0,0.01); /* вот это ключ! */
   border: none;
 }
+
 
 .footer-main,
 .footer-policy {
