@@ -21,10 +21,7 @@ html, body {
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-:root {
-  --menu-bottom: 180px;
-  --footer-height: 60px;
-}
+
 
 /* ---- BACKGROUND ---- */
 .background-image {
