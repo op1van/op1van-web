@@ -498,7 +498,7 @@ nav a#player-toggle.blurred {
 .footer-nav {
   position: fixed;
   left: 0;
-  bottom: 1px;         /* ← это главное! */
+  bottom: -10px;         /* ← это главное! */
   width: 100vw;
   display: flex;
   justify-content: center;
