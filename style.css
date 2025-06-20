@@ -115,17 +115,15 @@ nav a#player-toggle.blurred {
 
 /* Центрирование about на десктопе */
 .about-wrapper {
+  display: none;
   position: fixed;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 100;
-  display: none;
   justify-content: center;
-  align-items: flex-start; /* теперь только по горизонтали центр */
+  align-items: flex-start;
   background: none;
 }
 
@@ -133,14 +131,9 @@ nav a#player-toggle.blurred {
   display: flex;
 }
 
-.about-wrapper .about-text {
-  margin-top: calc(
-    (
-      (100vh - var(--menu-height, 90px) - var(--footer-height, 50px)) 
-      - var(--about-height, 300px)
-    ) / 2 + var(--menu-height, 90px)
-  );
-  margin-bottom: 0;
+.about-text {
+  margin-top: 50px;
+  /* остальное оставить как есть: */
   max-width: 830px;
   width: 100%;
   color: blue;
@@ -148,11 +141,13 @@ nav a#player-toggle.blurred {
   font-size: 1.15rem;
   line-height: 135%;
   text-transform: uppercase;
+  cursor: url('cursor.svg') 4 4, auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center !important;
 }
+
 
 
 
