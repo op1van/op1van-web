@@ -21,8 +21,6 @@ html, body {
   cursor: url('cursor.svg') 4 4, auto;
 }
 
-
-
 /* ---- BACKGROUND ---- */
 .background-image {
   position: fixed;
@@ -225,12 +223,11 @@ nav a#player-toggle.blurred {
   z-index: 10;
   cursor: url('cursor.svg') 4 4, default;
   user-select: none;
-  background: rgba(255,255,255,0.001); /* ← так работает по всей ширине! */
+  background: rgba(255,255,255,0.001);
   pointer-events: auto;
   border: none;
   padding: 4px 0;
 }
-
 
 .footer-main,
 .footer-policy {
@@ -293,7 +290,20 @@ nav a#player-toggle.blurred {
     padding: 0;
     z-index: 50;
   }
-  
+
+  nav {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-bottom: 2rem;
+  }
+
+  nav a {
+    display: block !important;
+    margin: 0 !important;
+    font-size: 1.25rem !important;
+    text-align: center !important;
+  }
 
   .about-wrapper .about-text {
     position: static !important;
@@ -353,7 +363,7 @@ nav a#player-toggle.blurred {
   color: #0008db;
   font-size: 1.01rem;
   font-family: 'CustomFont', Arial, sans-serif;
-  padding: 20px 16px 18px 16px; /* Можешь уменьшить, если нужно */
+  padding: 20px 16px 18px 16px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
   display: flex;
   flex-direction: column;
@@ -367,7 +377,6 @@ nav a#player-toggle.blurred {
   width: 100vw;
   max-width: 100vw;
 }
-
 
 .cookie-banner-btns {
   display: flex;
