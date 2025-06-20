@@ -212,7 +212,7 @@ nav a#player-toggle.blurred {
 .footer-nav {
   position: fixed;
   left: 0;
-  bottom: 15px;
+  bottom: 20px;
   width: 100vw;
   display: flex;
   justify-content: center;
