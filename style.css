@@ -116,7 +116,7 @@ nav a#player-toggle.blurred {
 /* Центрирование about на десктопе */
 .about-wrapper .about-text {
   position: absolute;
-  top: var(--menu-bottom);
+  top: calc(var(--menu-bottom) + 50px);
   bottom: var(--footer-height);
   left: 0;
   right: 0;
