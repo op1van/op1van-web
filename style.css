@@ -293,16 +293,6 @@ nav a#player-toggle.blurred {
     z-index: 50;
   }
   
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin: 0;
-  }
-
-  nav a {
-    font-size: 1.125rem;
-  }
 
   .about-wrapper .about-text {
     position: static !important;
