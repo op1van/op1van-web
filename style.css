@@ -137,8 +137,8 @@ nav a#player-toggle.blurred {
   line-height: 135%;
   text-transform: uppercase;
   cursor: url('cursor.svg') 4 4, auto;
-  align-items: center;      /* <---- центрируем контент по горизонтали */
-  text-align: center !important; /* <---- текст по центру */
+  align-items: center;
+  text-align: center !important;
 }
 
 .about-text:hover {
@@ -155,8 +155,8 @@ nav a#player-toggle.blurred {
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
-  align-items: center;      /* <---- центрируем контент по горизонтали */
-  text-align: center;       /* <---- текст по центру */
+  align-items: center;
+  text-align: center;
 }
 
 .album-title {
@@ -179,7 +179,7 @@ nav a#player-toggle.blurred {
 .track {
   display: flex;
   align-items: center;
-  justify-content: center;  /* <---- кнопка + текст по центру */
+  justify-content: center;
   gap: 0.75rem;
   margin-bottom: 7px;
   line-height: 1;
@@ -218,17 +218,24 @@ nav a#player-toggle.blurred {
   bottom: 15px;
   left: 0;
   width: 100%;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  pointer-events: none;
+}
+
+.footer-inner {
+  width: 100%;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   color: blue;
-  z-index: 10;
-  cursor: url('cursor.svg') 4 4, default;
   user-select: none;
   pointer-events: auto;
+  cursor: url('cursor.svg') 4 4, default;
+  display: inline-block;
   background: transparent;
-  border: none;
 }
 
 .footer-main,
@@ -238,7 +245,8 @@ nav a#player-toggle.blurred {
   vertical-align: middle;
 }
 
-.footer-main:hover {
+.footer-main:hover,
+.footer-policy:hover {
   filter: blur(2px);
 }
 
@@ -248,12 +256,8 @@ nav a#player-toggle.blurred {
   font-weight: bold;
   font-size: inherit;
   margin-left: 4px;
-  cursor: pointer;
+  cursor: url('cursor.svg') 4 4, pointer;
   transition: filter 0.2s;
-}
-
-.footer-policy:hover {
-  filter: blur(2px);
 }
 
 /* ---- CLOSE BUTTON ---- */
@@ -317,8 +321,8 @@ nav a#player-toggle.blurred {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center !important;    /* <--- центрируем на мобиле */
-    text-align: center !important;     /* <--- текст по центру */
+    align-items: center !important;
+    text-align: center !important;
     font-size: 1.7vh;
     line-height: 1.25;
   }
@@ -326,11 +330,11 @@ nav a#player-toggle.blurred {
   .player-text {
     font-size: 1.4vh;
     line-height: 1.2;
-    align-items: center !important;    /* <--- центрируем на мобиле */
-    text-align: center !important;     /* <--- текст по центру */
+    align-items: center !important;
+    text-align: center !important;
   }
 
-  .footer {
+  .footer-inner {
     font-size: 12px;
   }
 
@@ -466,5 +470,3 @@ nav a#player-toggle.blurred {
     padding: 8px 18px;
   }
 }
-
-/* Удалено всё левое выравнивание из about-text и player-text! */
