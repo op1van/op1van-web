@@ -494,3 +494,53 @@ nav a#player-toggle.blurred {
     padding: 8px 18px;
   }
 }
+
+.footer-nav {
+  position: fixed;
+  left: 0;
+  bottom: 15px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: blue;
+  z-index: 10;
+  cursor: url('cursor.svg') 4 4, default;
+  user-select: none;
+  background: none; /* никакой заливки — картинка будет видна */
+  pointer-events: auto;
+  border: none;
+}
+
+.footer-main,
+.footer-policy {
+  display: inline-block;
+  vertical-align: middle;
+  transition: filter 0.2s;
+}
+
+.footer-main:hover,
+.footer-policy:hover {
+  filter: blur(2px);
+}
+
+.footer-policy {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: inherit;
+  margin-left: 4px;
+  cursor: url('cursor.svg') 4 4, pointer;
+  transition: filter 0.2s;
+}
+
+@media (max-width: 768px) {
+  .footer-nav {
+    font-size: 12px;
+    gap: 6px;
+  }
+}
