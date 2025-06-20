@@ -526,3 +526,10 @@ nav a#player-toggle.blurred {
 .cookie-banner a {
   cursor: url('cursor.svg') 4 4, pointer !important;
 }
+
+@media (max-width: 768px) {
+  .about-wrapper .about-text {
+    margin-top: 56px !important;
+  }
+}
+
