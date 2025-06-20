@@ -12,7 +12,7 @@
   <div class="background-image"></div>
 
   <div class="content">
-    <a href="index.html" class="logo-link">
+    <a href="https://op1van.com" class="logo-link">
       <img src="logo.svg" alt="Logo" class="logo" />
     </a>
 
@@ -23,28 +23,27 @@
         <a href="https://www.tiktok.com/@op1van" target="_blank">TIK TOK</a>
         <a href="#" id="player-toggle">PLAYER</a>
         <a href="#" id="about-toggle">ABOUT</a>
+        <a href="https://collaba.music" target="_blank">LABEL</a>
         <a href="mailto:contact.op1van@gmail.com">CONTACT</a>
       </nav>
     </div>
   </div>
 
   <div class="about-wrapper" id="about-wrapper">
-  <div class="about-text">
-  <img src="op1.png" alt="OP-1" style="height:100px; display:block; margin: 0 auto;">
-  <br><br>
-  The name comes from “OP-1 Teenage Engineering” 👇
-  <br><br>  
-  👆It pulled me out of a creative rut and put me back on the musical tracks. With it, I started creating again — first demos after moving to France from... The past doesn’t matter! Identity isn’t the main thing. Music — that’s what counts. 🚬😎 I’ve been given a unique chance to live a whole new life. So yeah, I’ve started. Low-key. Starting from the bottom, but the experience is always with me.
-  <br><br>
-  I used to make music — and before that, I also made quite a lot of music — and now I’m making music again…Maybe someday I’ll tilt up the brim of my cap — show my face. But for now, my face is music. No! I don’t work for Teenage Engineering.
-  <br><br>
-  Favorite color — 💙<br>
-  Shoe size — 45.5<br>
-  Age — ...<br>
-  Shit! Got dirty…
-</div>
-
-
+    <div class="about-text">
+      <img src="op1.png" alt="OP-1" style="height:100px; display:block; margin: 0 auto;">
+      <br><br>
+      The name comes from “OP-1 Teenage Engineering” 👇
+      <br><br>  
+      👆It pulled me out of a creative rut and put me back on the musical tracks. With it, I started creating again — first demos after moving to France from... The past doesn’t matter! Identity isn’t the main thing. Music — that’s what counts. 🚬😎 I’ve been given a unique chance to live a whole new life. So yeah, I’ve started. Low-key. Starting from the bottom, but the experience is always with me.
+      <br><br>
+      I used to make music — and before that, I also made quite a lot of music — and now I’m making music again…Maybe someday I’ll tilt up the brim of my cap — show my face. But for now, my face is music. No! I don’t work for Teenage Engineering.
+      <br><br>
+      Favorite color — 💙<br>
+      Shoe size — 45.5<br>
+      Age — ...<br>
+      Shit! Got dirty…
+    </div>
   </div>
 
   <div class="player-wrapper" id="player-wrapper">
@@ -69,12 +68,10 @@
     </div>
   </div>
 
-<footer class="footer">
-  <span class="footer-main">ALL RIGHTS RESERVED © 2025</span>
-  <a href="policy.html" class="footer-policy" target="_blank">PRIVACY &amp; COOKIE POLICY</a>
-</footer>
-
-
+  <footer class="footer">
+    <span class="footer-main">ALL RIGHTS RESERVED © 2025</span>
+    <a href="policy.html" class="footer-policy" target="_blank">PRIVACY &amp; COOKIE POLICY</a>
+  </footer>
 
   <div class="close-btn" id="close-btn">✕</div>
 
@@ -181,33 +178,32 @@
       });
     });
   </script>
-<div id="cookie-banner" class="cookie-banner">
-  <span>
-    This website uses cookies and similar technologies (e.g., Google Analytics, YouTube, Spotify) to analyze traffic and display embedded media files. By continuing to browse, you agree to their use. If you do not agree, please close the website. For more information, please read our Privacy Policy.
-  </span>
-  <div class="cookie-banner-btns">
-    <button id="cookie-accept" class="cookie-btn" type="button">Accept</button>
-    <button id="cookie-learn" class="cookie-btn" type="button">Learn More</button>
+  <div id="cookie-banner" class="cookie-banner">
+    <span>
+      This website uses cookies and similar technologies (e.g., Google Analytics, YouTube, Spotify) to analyze traffic and display embedded media files. By continuing to browse, you agree to their use. If you do not agree, please close the website. For more information, please read our Privacy Policy.
+    </span>
+    <div class="cookie-banner-btns">
+      <button id="cookie-accept" class="cookie-btn" type="button">Accept</button>
+      <button id="cookie-learn" class="cookie-btn" type="button">Learn More</button>
+    </div>
   </div>
-</div>
-<script>
-  // Показываем баннер, если еще не закрыт
-  if (!localStorage.getItem('cookieBannerAccepted')) {
-    document.getElementById('cookie-banner').style.display = 'flex';
-  } else {
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
+  <script>
+    // Показываем баннер, если еще не закрыт
+    if (!localStorage.getItem('cookieBannerAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    } else {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
 
-  document.getElementById('cookie-accept').onclick = function() {
-    localStorage.setItem('cookieBannerAccepted', '1');
-    document.getElementById('cookie-banner').style.display = 'none';
-  };
+    document.getElementById('cookie-accept').onclick = function() {
+      localStorage.setItem('cookieBannerAccepted', '1');
+      document.getElementById('cookie-banner').style.display = 'none';
+    };
 
-  document.getElementById('cookie-learn').onclick = function() {
-    window.open('policy.html', '_blank');
-  };
-</script>
-
+    document.getElementById('cookie-learn').onclick = function() {
+      window.open('policy.html', '_blank');
+    };
+  </script>
 
 </body>
 </html>
