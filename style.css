@@ -213,23 +213,6 @@ nav a#player-toggle.blurred {
 }
 
 /* ---- FOOTER ---- */
-.footer {
-  position: fixed;
-  bottom: 15px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: blue;
-  z-index: 10;
-  cursor: url('cursor.svg') 4 4, default;
-  user-select: none;
-  background: rgba(0,0,0,0.01); /* вот это ключ! */
-  border: none;
-}
-
 
 .footer-main,
 .footer-policy {
