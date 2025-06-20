@@ -240,23 +240,7 @@ nav a#player-toggle.blurred {
 }
 
 /* ХАК для Chrome: псевдоэлемент, который всегда присутствует в футере */
-.footer {
-  position: fixed;
-  bottom: 15px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: blue;
-  z-index: 10;
-  cursor: url('cursor.svg') 4 4, default;
-  user-select: none;
-  background: transparent;
-  border: none;
-  pointer-events: auto;
-}
+
 .footer::after {
   content: '';
   display: block;
