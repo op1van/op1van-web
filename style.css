@@ -500,6 +500,7 @@ nav a#player-toggle.blurred {
   left: 0;
   width: 100vw;
   display: flex;
+  bottom: 0px;
   justify-content: center;
   align-items: center;
   gap: 8px;
