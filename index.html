@@ -13,7 +13,7 @@
 
   <div class="content">
     <a href="https://op1van.com" class="logo-link">
-      <img src="logo.svg" alt="Logo" class="logo" />
+      <img src="./images/logo.svg" alt="Logo" class="logo" />
     </a>
 
     <div class="menu">
@@ -31,7 +31,7 @@
 
   <div class="about-wrapper" id="about-wrapper">
     <div class="about-text">
-      <img src="op1.png" alt="OP-1" style="height:100px; display:block; margin: 0 auto;">
+      <img src="./images/op1.png" alt="OP-1" style="height:100px; display:block; margin: 0 auto;">
       <br><br>
       The name comes from “OP-1 Teenage Engineering” 👆
       <br><br>  
@@ -53,16 +53,16 @@
         <div>I sampled the radio 2</div>
       </div>
 
-      <div class="track" data-audio="paris.mp3">
-        <img src="play.svg" class="play-btn" alt="Play" />
+      <div class="track" data-audio="./music/paris.mp3">
+        <img src="./images/icons/play.svg" class="play-btn" alt="Play" />
         <span>PARIS 03:20</span>
       </div>
-      <div class="track" data-audio="toshkent.mp3">
-        <img src="play.svg" class="play-btn" alt="Play" />
+      <div class="track" data-audio="./music/toshkent.mp3">
+        <img src="./images/icons/play.svg" class="play-btn" alt="Play" />
         <span>TOSHKENT 03:15</span>
       </div>
-      <div class="track" data-audio="hydraisland.mp3">
-        <img src="play.svg" class="play-btn" alt="Play" />
+      <div class="track" data-audio="./music/hydraisland.mp3">
+        <img src="./images/icons/play.svg" class="play-btn" alt="Play" />
         <span>HYDRA ISLAND 02:07</span>
       </div>
     </div>
@@ -177,20 +177,20 @@
       if (currentAudio && currentAudio !== audio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
-        if (currentBtn) currentBtn.src = 'play.svg';
+        if (currentBtn) currentBtn.src = './images/icons/play.svg';
         if (currentTrack) currentTrack.classList.remove('blurred');
       }
 
       if (audio.paused) {
         audio.play();
-        btn.src = 'pause.svg';
+        btn.src = './images/icons/pause.svg';
         currentAudio = audio;
         currentBtn = btn;
         currentTrack = track;
         track.classList.add('blurred');
       } else {
         audio.pause();
-        btn.src = 'play.svg';
+        btn.src = './images/icons/play.svg';
         track.classList.remove('blurred');
         currentAudio = null;
         currentBtn = null;
