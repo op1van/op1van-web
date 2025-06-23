@@ -543,3 +543,14 @@ nav a#player-toggle.blurred {
   }
 }
 
+@media (min-width: 769px) {
+  nav {
+    position: relative;
+    z-index: 200 !important; /* меню всегда поверх about/player */
+  }
+}
+.about-wrapper,
+.player-wrapper {
+  z-index: 100; /* оставляем чуть ниже меню */
+}
+
