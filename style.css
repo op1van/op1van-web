@@ -567,3 +567,10 @@ nav a#player-toggle.blurred {
     pointer-events: auto !important;
   }
 }
+
+@media (max-height: 750px) {
+  .about-text img {
+    display: none !important;
+  }
+}
+
