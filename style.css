@@ -139,7 +139,7 @@ nav a#player-toggle.blurred {
   width: 100%;
   color: blue;
   font-weight: 900;
-  font-size: clamp(1.0rem, 2.6vh, 2.1rem);
+  font-size: clamp(1.0rem, 1.93vh, 2.1rem);
   line-height: 1.28;
   text-transform: uppercase;
   cursor: url('cursor.svg') 4 4, auto;
