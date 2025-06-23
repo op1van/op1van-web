@@ -135,21 +135,20 @@ nav a#player-toggle.blurred {
   margin-top: 170px;
   /* остальное оставить как есть: */
   max-width: 830px;
-  max-height: 76vh;
   width: 100%;
   color: blue;
   font-weight: 900;
-  font-size: clamp(1.0rem, 2vh, 2.4rem);
-  line-height: 1.28;
+  font-size: 1.15rem;
+  line-height: 135%;
   text-transform: uppercase;
   cursor: url('cursor.svg') 4 4, auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center !important;
-  overflow-y: auto;
-  padding-bottom: 30px;
 }
+
+
 
 
 .about-text:hover {
@@ -316,8 +315,6 @@ nav a#player-toggle.blurred {
     gap: 8px !important;
     margin: 0 !important;
     padding: 0 !important;
-    position: relative;
-    z-index: 200 !important;
   }
   nav a {
     display: block !important;
@@ -352,11 +349,6 @@ nav a#player-toggle.blurred {
     text-align: center !important;
   }
 
-.about-wrapper,
-.player-wrapper {
-  z-index: 100; /* оставляем чуть ниже меню */
-}
-  
   /* Футер: privacy и all rights — одного размера, выровнены по центру */
   .footer-nav {
     font-size: 12px !important;
@@ -543,14 +535,35 @@ nav a#player-toggle.blurred {
   }
 }
 
+
+
 @media (min-width: 769px) {
+  .about-text {
+    font-size: clamp(1.0rem, 1.93vh, 2.1rem);
+    line-height: 1.28;
+    max-height: 76vh;
+    overflow-y: auto;
+    padding-bottom: 30px;
+  }
   nav {
     position: relative;
-    z-index: 200 !important; /* меню всегда поверх about/player */
+    z-index: 500 !important;
+  }
+  nav a {
+    position: relative;
+    z-index: 600 !important;
+  }
+  .about-wrapper,
+  .player-wrapper {
+    z-index: 100 !important;
+    pointer-events: none !important;
+  }
+  .about-wrapper.visible,
+  .player-wrapper.visible {
+    display: flex;
+  }
+  .about-text,
+  .player-text {
+    pointer-events: auto !important;
   }
 }
-.about-wrapper,
-.player-wrapper {
-  z-index: 100; /* оставляем чуть ниже меню */
-}
-
